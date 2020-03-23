@@ -1,0 +1,12 @@
+global:
+  scrape_interval: 15s
+  evaluation_interval: 30s
+
+rule_files:
+  - 'conf.d/*.rules'
+
+scrape_configs:
+
+  - job_name: 'nodeexporter (local)'
+    static_configs:
+      - targets: ['nodeexporter:9100']

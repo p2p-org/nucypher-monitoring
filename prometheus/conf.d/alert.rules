@@ -1,0 +1,11 @@
+groups:
+- name: prometheus
+  rules:
+  - alert: ExporterDown
+    expr: up == 0
+    for: 15s
+    labels:
+      severity: warning
+    annotations:
+      summary: "Exporter is down"
+      description: "VALUE = {{ $value }}\nLABELS:\n{{ $labels }}"
