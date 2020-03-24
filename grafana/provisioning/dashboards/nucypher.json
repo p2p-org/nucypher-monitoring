@@ -15,8 +15,8 @@
     "editable": true,
     "gnetId": 1860,
     "graphTooltip": 2,
-    "id": 15,
-    "iteration": 1584969437506,
+    "id": 1,
+    "iteration": 1585052960112,
     "links": [],
     "panels": [
       {
@@ -52,6 +52,9 @@
               "lastNotNull"
             ],
             "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
               "mappings": [
                 {
                   "id": 0,
@@ -64,33 +67,36 @@
               "max": 100,
               "min": 0,
               "nullValueMode": "null",
-              "thresholds": [
-                {
-                  "color": "rgba(50, 172, 45, 0.97)",
-                  "value": null
-                },
-                {
-                  "color": "rgba(237, 129, 40, 0.89)",
-                  "value": 85
-                },
-                {
-                  "color": "rgba(245, 54, 54, 0.9)",
-                  "value": 95
-                }
-              ],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "rgba(50, 172, 45, 0.97)",
+                    "value": null
+                  },
+                  {
+                    "color": "rgba(237, 129, 40, 0.89)",
+                    "value": 85
+                  },
+                  {
+                    "color": "rgba(245, 54, 54, 0.9)",
+                    "value": 95
+                  }
+                ]
+              },
               "unit": "percent"
             },
-            "override": {},
+            "overrides": [],
             "values": false
           },
           "orientation": "horizontal",
           "showThresholdLabels": false,
           "showThresholdMarkers": true
         },
-        "pluginVersion": "6.5.1",
+        "pluginVersion": "6.7.0",
         "targets": [
           {
-            "expr": "(((count(count(node_cpu_seconds_total{instance=~\"$node:$port\",job=~\"$job\"}) by (cpu))) - avg(sum by (mode)(irate(node_cpu_seconds_total{mode='idle',instance=~\"$node:$port\",job=~\"$job\"}[5m])))) * 100) / count(count(node_cpu_seconds_total{instance=~\"$node:$port\",job=~\"$job\"}) by (cpu))",
+            "expr": "(((count(count(node_cpu_seconds_total{instance=~\"127.0.0.1:9100\"}) by (cpu))) - avg(sum by (mode)(irate(node_cpu_seconds_total{mode='idle',instance=~\"127.0.0.1:9100\"}[5m])))) * 100) / count(count(node_cpu_seconds_total{instance=~\"127.0.0.1:9100\"}) by (cpu))",
             "hide": false,
             "intervalFactor": 1,
             "legendFormat": "",
@@ -119,6 +125,9 @@
               "lastNotNull"
             ],
             "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
               "mappings": [
                 {
                   "id": 0,
@@ -131,33 +140,36 @@
               "max": 100,
               "min": 0,
               "nullValueMode": "null",
-              "thresholds": [
-                {
-                  "color": "rgba(50, 172, 45, 0.97)",
-                  "value": null
-                },
-                {
-                  "color": "rgba(237, 129, 40, 0.89)",
-                  "value": 85
-                },
-                {
-                  "color": "rgba(245, 54, 54, 0.9)",
-                  "value": 95
-                }
-              ],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "rgba(50, 172, 45, 0.97)",
+                    "value": null
+                  },
+                  {
+                    "color": "rgba(237, 129, 40, 0.89)",
+                    "value": 85
+                  },
+                  {
+                    "color": "rgba(245, 54, 54, 0.9)",
+                    "value": 95
+                  }
+                ]
+              },
               "unit": "percent"
             },
-            "override": {},
+            "overrides": [],
             "values": false
           },
           "orientation": "horizontal",
           "showThresholdLabels": false,
           "showThresholdMarkers": true
         },
-        "pluginVersion": "6.5.1",
+        "pluginVersion": "6.7.0",
         "targets": [
           {
-            "expr": "avg(node_load5{instance=~\"$node:$port\",job=~\"$job\"}) /  count(count(node_cpu_seconds_total{instance=~\"$node:$port\",job=~\"$job\"}) by (cpu)) * 100",
+            "expr": "avg(node_load5{instance=~\"127.0.0.1:9100\"}) /  count(count(node_cpu_seconds_total{instance=~\"127.0.0.1:9100\"}) by (cpu)) * 100",
             "format": "time_series",
             "hide": false,
             "intervalFactor": 1,
@@ -186,6 +198,9 @@
               "lastNotNull"
             ],
             "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
               "mappings": [
                 {
                   "id": 0,
@@ -198,33 +213,36 @@
               "max": 100,
               "min": 0,
               "nullValueMode": "null",
-              "thresholds": [
-                {
-                  "color": "rgba(50, 172, 45, 0.97)",
-                  "value": null
-                },
-                {
-                  "color": "rgba(237, 129, 40, 0.89)",
-                  "value": 85
-                },
-                {
-                  "color": "rgba(245, 54, 54, 0.9)",
-                  "value": 95
-                }
-              ],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "rgba(50, 172, 45, 0.97)",
+                    "value": null
+                  },
+                  {
+                    "color": "rgba(237, 129, 40, 0.89)",
+                    "value": 85
+                  },
+                  {
+                    "color": "rgba(245, 54, 54, 0.9)",
+                    "value": 95
+                  }
+                ]
+              },
               "unit": "percent"
             },
-            "override": {},
+            "overrides": [],
             "values": false
           },
           "orientation": "horizontal",
           "showThresholdLabels": false,
           "showThresholdMarkers": true
         },
-        "pluginVersion": "6.5.1",
+        "pluginVersion": "6.7.0",
         "targets": [
           {
-            "expr": "avg(node_load15{instance=~\"$node:$port\",job=~\"$job\"}) /  count(count(node_cpu_seconds_total{instance=~\"$node:$port\",job=~\"$job\"}) by (cpu)) * 100",
+            "expr": "avg(node_load15{instance=~\"127.0.0.1:9100\"}) /  count(count(node_cpu_seconds_total{instance=~\"127.0.0.1:9100\"}) by (cpu)) * 100",
             "hide": false,
             "intervalFactor": 1,
             "refId": "A",
@@ -253,38 +271,44 @@
               "lastNotNull"
             ],
             "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
               "decimals": 0,
               "mappings": [],
               "max": 100,
               "min": 0,
               "nullValueMode": "null",
-              "thresholds": [
-                {
-                  "color": "rgba(50, 172, 45, 0.97)",
-                  "value": null
-                },
-                {
-                  "color": "rgba(237, 129, 40, 0.89)",
-                  "value": 80
-                },
-                {
-                  "color": "rgba(245, 54, 54, 0.9)",
-                  "value": 90
-                }
-              ],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "rgba(50, 172, 45, 0.97)",
+                    "value": null
+                  },
+                  {
+                    "color": "rgba(237, 129, 40, 0.89)",
+                    "value": 80
+                  },
+                  {
+                    "color": "rgba(245, 54, 54, 0.9)",
+                    "value": 90
+                  }
+                ]
+              },
               "unit": "percent"
             },
-            "override": {},
+            "overrides": [],
             "values": false
           },
           "orientation": "horizontal",
           "showThresholdLabels": false,
           "showThresholdMarkers": true
         },
-        "pluginVersion": "6.5.1",
+        "pluginVersion": "6.7.0",
         "targets": [
           {
-            "expr": "((node_memory_MemTotal_bytes{instance=~\"$node:$port\",job=~\"$job\"} - node_memory_MemFree_bytes{instance=~\"$node:$port\",job=~\"$job\"}) / (node_memory_MemTotal_bytes{instance=~\"$node:$port\",job=~\"$job\"} )) * 100",
+            "expr": "((node_memory_MemTotal_bytes{instance=~\"127.0.0.1:9100\"} - node_memory_MemFree_bytes{instance=~\"127.0.0.1:9100\"}) / (node_memory_MemTotal_bytes{instance=~\"127.0.0.1:9100\"} )) * 100",
             "format": "time_series",
             "hide": true,
             "intervalFactor": 1,
@@ -292,7 +316,7 @@
             "step": 900
           },
           {
-            "expr": "100 - ((node_memory_MemAvailable_bytes{instance=~\"$node:$port\",job=~\"$job\"} * 100) / node_memory_MemTotal_bytes{instance=~\"$node:$port\",job=~\"$job\"})",
+            "expr": "100 - ((node_memory_MemAvailable_bytes{instance=~\"127.0.0.1:9100\"} * 100) / node_memory_MemTotal_bytes{instance=~\"127.0.0.1:9100\"})",
             "format": "time_series",
             "hide": false,
             "intervalFactor": 1,
@@ -321,6 +345,9 @@
               "lastNotNull"
             ],
             "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
               "mappings": [
                 {
                   "id": 0,
@@ -333,33 +360,36 @@
               "max": 100,
               "min": 0,
               "nullValueMode": "null",
-              "thresholds": [
-                {
-                  "color": "rgba(50, 172, 45, 0.97)",
-                  "value": null
-                },
-                {
-                  "color": "rgba(237, 129, 40, 0.89)",
-                  "value": 10
-                },
-                {
-                  "color": "rgba(245, 54, 54, 0.9)",
-                  "value": 25
-                }
-              ],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "rgba(50, 172, 45, 0.97)",
+                    "value": null
+                  },
+                  {
+                    "color": "rgba(237, 129, 40, 0.89)",
+                    "value": 10
+                  },
+                  {
+                    "color": "rgba(245, 54, 54, 0.9)",
+                    "value": 25
+                  }
+                ]
+              },
               "unit": "percent"
             },
-            "override": {},
+            "overrides": [],
             "values": false
           },
           "orientation": "horizontal",
           "showThresholdLabels": false,
           "showThresholdMarkers": true
         },
-        "pluginVersion": "6.5.1",
+        "pluginVersion": "6.7.0",
         "targets": [
           {
-            "expr": "((node_memory_SwapTotal_bytes{instance=~\"$node:$port\",job=~\"$job\"} - node_memory_SwapFree_bytes{instance=~\"$node:$port\",job=~\"$job\"}) / (node_memory_SwapTotal_bytes{instance=~\"$node:$port\",job=~\"$job\"} )) * 100",
+            "expr": "((node_memory_SwapTotal_bytes{instance=~\"127.0.0.1:9100\"} - node_memory_SwapFree_bytes{instance=~\"127.0.0.1:9100\"}) / (node_memory_SwapTotal_bytes{instance=~\"127.0.0.1:9100\"} )) * 100",
             "intervalFactor": 1,
             "refId": "A",
             "step": 900
@@ -386,6 +416,9 @@
               "lastNotNull"
             ],
             "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
               "mappings": [
                 {
                   "id": 0,
@@ -398,33 +431,36 @@
               "max": 100,
               "min": 0,
               "nullValueMode": "null",
-              "thresholds": [
-                {
-                  "color": "rgba(50, 172, 45, 0.97)",
-                  "value": null
-                },
-                {
-                  "color": "rgba(237, 129, 40, 0.89)",
-                  "value": 80
-                },
-                {
-                  "color": "rgba(245, 54, 54, 0.9)",
-                  "value": 90
-                }
-              ],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "rgba(50, 172, 45, 0.97)",
+                    "value": null
+                  },
+                  {
+                    "color": "rgba(237, 129, 40, 0.89)",
+                    "value": 80
+                  },
+                  {
+                    "color": "rgba(245, 54, 54, 0.9)",
+                    "value": 90
+                  }
+                ]
+              },
               "unit": "percent"
             },
-            "override": {},
+            "overrides": [],
             "values": false
           },
           "orientation": "horizontal",
           "showThresholdLabels": false,
           "showThresholdMarkers": true
         },
-        "pluginVersion": "6.5.1",
+        "pluginVersion": "6.7.0",
         "targets": [
           {
-            "expr": "100 - ((node_filesystem_avail_bytes{instance=~\"$node:$port\",job=~\"$job\",mountpoint=\"/\",fstype!=\"rootfs\"} * 100) / node_filesystem_size_bytes{instance=~\"$node:$port\",job=~\"$job\",mountpoint=\"/\",fstype!=\"rootfs\"})",
+            "expr": "100 - ((node_filesystem_avail_bytes{instance=~\"127.0.0.1:9100\",mountpoint=\"/\",fstype!=\"rootfs\"} * 100) / node_filesystem_size_bytes{instance=~\"127.0.0.1:9100\",mountpoint=\"/\",fstype!=\"rootfs\"})",
             "format": "time_series",
             "intervalFactor": 1,
             "refId": "A",
@@ -477,7 +513,6 @@
         "maxPerRow": 6,
         "nullPointMode": "null",
         "nullText": null,
-        "options": {},
         "postfix": "",
         "postfixFontSize": "50%",
         "prefix": "",
@@ -498,7 +533,7 @@
         "tableColumn": "",
         "targets": [
           {
-            "expr": "count(count(node_cpu_seconds_total{instance=~\"$node:$port\",job=~\"$job\"}) by (cpu))",
+            "expr": "count(count(node_cpu_seconds_total{instance=~\"127.0.0.1:9100\"}) by (cpu))",
             "intervalFactor": 1,
             "refId": "A",
             "step": 900
@@ -561,7 +596,6 @@
         "maxPerRow": 6,
         "nullPointMode": "null",
         "nullText": null,
-        "options": {},
         "postfix": "",
         "postfixFontSize": "70%",
         "prefix": "",
@@ -582,7 +616,7 @@
         "tableColumn": "",
         "targets": [
           {
-            "expr": "node_memory_MemTotal_bytes{instance=~\"$node:$port\",job=~\"$job\"}",
+            "expr": "node_memory_MemTotal_bytes{instance=~\"127.0.0.1:9100\"}",
             "instant": true,
             "intervalFactor": 1,
             "refId": "A",
@@ -646,7 +680,6 @@
         "maxPerRow": 6,
         "nullPointMode": "null",
         "nullText": null,
-        "options": {},
         "postfix": "",
         "postfixFontSize": "70%",
         "prefix": "",
@@ -667,7 +700,7 @@
         "tableColumn": "",
         "targets": [
           {
-            "expr": "node_memory_SwapTotal_bytes{instance=~\"$node:$port\",job=~\"$job\"}",
+            "expr": "node_memory_SwapTotal_bytes{instance=~\"127.0.0.1:9100\"}",
             "instant": true,
             "intervalFactor": 1,
             "refId": "A",
@@ -731,7 +764,6 @@
         "maxPerRow": 12,
         "nullPointMode": "null",
         "nullText": null,
-        "options": {},
         "postfix": "",
         "postfixFontSize": "50%",
         "prefix": "",
@@ -752,7 +784,7 @@
         "tableColumn": "",
         "targets": [
           {
-            "expr": "node_load1{instance=~\"$node:$port\",job=~\"$job\"}",
+            "expr": "node_load1{instance=~\"127.0.0.1:9100\"}",
             "hide": false,
             "instant": true,
             "intervalFactor": 1,
@@ -817,7 +849,6 @@
         "maxPerRow": 6,
         "nullPointMode": "null",
         "nullText": null,
-        "options": {},
         "postfix": "",
         "postfixFontSize": "50%",
         "prefix": "",
@@ -838,7 +869,7 @@
         "tableColumn": "",
         "targets": [
           {
-            "expr": "node_filesystem_size_bytes{instance=~\"$node:$port\",job=~\"$job\",mountpoint=\"/\",fstype!=\"rootfs\"}",
+            "expr": "node_filesystem_size_bytes{instance=~\"127.0.0.1:9100\",mountpoint=\"/\",fstype!=\"rootfs\"}",
             "format": "time_series",
             "hide": false,
             "instant": true,
@@ -904,7 +935,6 @@
         "maxDataPoints": 100,
         "nullPointMode": "null",
         "nullText": null,
-        "options": {},
         "postfix": "s",
         "postfixFontSize": "30%",
         "prefix": "",
@@ -925,7 +955,7 @@
         "tableColumn": "",
         "targets": [
           {
-            "expr": "node_time_seconds{instance=~\"$node:$port\",job=~\"$job\"} - node_boot_time_seconds{instance=~\"$node:$port\",job=~\"$job\"}",
+            "expr": "node_time_seconds{instance=~\"127.0.0.1:9100\"} - node_boot_time_seconds{instance=~\"127.0.0.1:9100\"}",
             "instant": true,
             "intervalFactor": 2,
             "refId": "A",
@@ -1046,7 +1076,7 @@
         "steppedLine": false,
         "targets": [
           {
-            "expr": "sum by (instance)(irate(node_cpu_seconds_total{mode=\"system\",instance=~\"$node:$port\",job=~\"$job\"}[5m])) * 100",
+            "expr": "sum by (instance)(irate(node_cpu_seconds_total{mode=\"system\",instance=~\"127.0.0.1:9100\"}[5m])) * 100",
             "format": "time_series",
             "hide": false,
             "intervalFactor": 2,
@@ -1055,7 +1085,7 @@
             "step": 240
           },
           {
-            "expr": "sum by (instance)(irate(node_cpu_seconds_total{mode='user',instance=~\"$node:$port\",job=~\"$job\"}[5m])) * 100",
+            "expr": "sum by (instance)(irate(node_cpu_seconds_total{mode='user',instance=~\"127.0.0.1:9100\"}[5m])) * 100",
             "format": "time_series",
             "hide": false,
             "intervalFactor": 2,
@@ -1064,7 +1094,7 @@
             "step": 240
           },
           {
-            "expr": "sum by (instance)(irate(node_cpu_seconds_total{mode='iowait',instance=~\"$node:$port\",job=~\"$job\"}[5m])) * 100",
+            "expr": "sum by (instance)(irate(node_cpu_seconds_total{mode='iowait',instance=~\"127.0.0.1:9100\"}[5m])) * 100",
             "format": "time_series",
             "intervalFactor": 2,
             "legendFormat": "Busy Iowait",
@@ -1072,7 +1102,7 @@
             "step": 240
           },
           {
-            "expr": "sum by (instance)(irate(node_cpu_seconds_total{mode=~\".*irq\",instance=~\"$node:$port\",job=~\"$job\"}[5m])) * 100",
+            "expr": "sum by (instance)(irate(node_cpu_seconds_total{mode=~\".*irq\",instance=~\"127.0.0.1:9100\"}[5m])) * 100",
             "format": "time_series",
             "intervalFactor": 2,
             "legendFormat": "Busy IRQs",
@@ -1080,7 +1110,7 @@
             "step": 240
           },
           {
-            "expr": "sum (irate(node_cpu_seconds_total{mode!='idle',mode!='user',mode!='system',mode!='iowait',mode!='irq',mode!='softirq',instance=~\"$node:$port\",job=~\"$job\"}[5m])) * 100",
+            "expr": "sum (irate(node_cpu_seconds_total{mode!='idle',mode!='user',mode!='system',mode!='iowait',mode!='irq',mode!='softirq',instance=~\"127.0.0.1:9100\"}[5m])) * 100",
             "format": "time_series",
             "intervalFactor": 2,
             "legendFormat": "Busy Other",
@@ -1088,7 +1118,7 @@
             "step": 240
           },
           {
-            "expr": "sum by (mode)(irate(node_cpu_seconds_total{mode='idle',instance=~\"$node:$port\",job=~\"$job\"}[5m])) * 100",
+            "expr": "sum by (mode)(irate(node_cpu_seconds_total{mode='idle',instance=~\"127.0.0.1:9100\"}[5m])) * 100",
             "format": "time_series",
             "intervalFactor": 2,
             "legendFormat": "Idle",
@@ -1226,7 +1256,7 @@
         "steppedLine": false,
         "targets": [
           {
-            "expr": "node_memory_MemTotal_bytes{instance=~\"$node:$port\",job=~\"$job\"}",
+            "expr": "node_memory_MemTotal_bytes{instance=~\"127.0.0.1:9100\"}",
             "format": "time_series",
             "hide": false,
             "intervalFactor": 2,
@@ -1235,7 +1265,7 @@
             "step": 240
           },
           {
-            "expr": "node_memory_MemTotal_bytes{instance=~\"$node:$port\",job=~\"$job\"} - node_memory_MemFree_bytes{instance=~\"$node:$port\",job=~\"$job\"} - (node_memory_Cached_bytes{instance=~\"$node:$port\",job=~\"$job\"} + node_memory_Buffers_bytes{instance=~\"$node:$port\",job=~\"$job\"})",
+            "expr": "node_memory_MemTotal_bytes{instance=~\"127.0.0.1:9100\"} - node_memory_MemFree_bytes{instance=~\"127.0.0.1:9100\"} - (node_memory_Cached_bytes{instance=~\"127.0.0.1:9100\"} + node_memory_Buffers_bytes{instance=~\"127.0.0.1:9100\"})",
             "format": "time_series",
             "hide": false,
             "intervalFactor": 2,
@@ -1244,7 +1274,7 @@
             "step": 240
           },
           {
-            "expr": "node_memory_Cached_bytes{instance=~\"$node:$port\",job=~\"$job\"} + node_memory_Buffers_bytes{instance=~\"$node:$port\",job=~\"$job\"}",
+            "expr": "node_memory_Cached_bytes{instance=~\"127.0.0.1:9100\"} + node_memory_Buffers_bytes{instance=~\"127.0.0.1:9100\"}",
             "format": "time_series",
             "intervalFactor": 2,
             "legendFormat": "RAM Cache + Buffer",
@@ -1252,7 +1282,7 @@
             "step": 240
           },
           {
-            "expr": "node_memory_MemFree_bytes{instance=~\"$node:$port\",job=~\"$job\"}",
+            "expr": "node_memory_MemFree_bytes{instance=~\"127.0.0.1:9100\"}",
             "format": "time_series",
             "intervalFactor": 2,
             "legendFormat": "RAM Free",
@@ -1260,7 +1290,7 @@
             "step": 240
           },
           {
-            "expr": "(node_memory_SwapTotal_bytes{instance=~\"$node:$port\",job=~\"$job\"} - node_memory_SwapFree_bytes{instance=~\"$node:$port\",job=~\"$job\"})",
+            "expr": "(node_memory_SwapTotal_bytes{instance=~\"127.0.0.1:9100\"} - node_memory_SwapFree_bytes{instance=~\"127.0.0.1:9100\"})",
             "format": "time_series",
             "intervalFactor": 2,
             "legendFormat": "SWAP Used",
@@ -1387,7 +1417,7 @@
         "steppedLine": false,
         "targets": [
           {
-            "expr": "irate(node_network_receive_bytes_total{instance=~\"$node:$port\",job=~\"$job\"}[5m])*8",
+            "expr": "irate(node_network_receive_bytes_total{instance=~\"127.0.0.1:9100\"}[5m])*8",
             "format": "time_series",
             "intervalFactor": 2,
             "legendFormat": "recv {{device}}",
@@ -1395,7 +1425,7 @@
             "step": 240
           },
           {
-            "expr": "irate(node_network_transmit_bytes_total{instance=~\"$node:$port\",job=~\"$job\"}[5m])*8",
+            "expr": "irate(node_network_transmit_bytes_total{instance=~\"127.0.0.1:9100\"}[5m])*8",
             "format": "time_series",
             "intervalFactor": 2,
             "legendFormat": "trans {{device}} ",
@@ -1494,7 +1524,7 @@
         "steppedLine": false,
         "targets": [
           {
-            "expr": "100 - ((node_filesystem_avail_bytes{instance=~\"$node:$port\",job=~\"$job\",device!~'rootfs'} * 100) / node_filesystem_size_bytes{instance=~\"$node:$port\",job=~\"$job\",device!~'rootfs'})",
+            "expr": "100 - ((node_filesystem_avail_bytes{instance=~\"127.0.0.1:9100\",device!~'rootfs'} * 100) / node_filesystem_size_bytes{instance=~\"127.0.0.1:9100\",device!~'rootfs'})",
             "format": "time_series",
             "intervalFactor": 2,
             "legendFormat": "{{mountpoint}}",
@@ -1545,13 +1575,14 @@
       }
     ],
     "refresh": false,
-    "schemaVersion": 21,
+    "schemaVersion": 22,
     "style": "dark",
     "tags": [],
     "templating": {
       "list": [
         {
           "current": {
+            "selected": false,
             "text": "Prometheus",
             "value": "Prometheus"
           },
@@ -1566,98 +1597,6 @@
           "regex": "",
           "skipUrlSync": false,
           "type": "datasource"
-        },
-        {
-          "allValue": null,
-          "current": {
-            "text": "node-exporter",
-            "value": "node-exporter"
-          },
-          "datasource": "$DS_PROMETHEUS",
-          "definition": "label_values(node_uname_info, job)",
-          "hide": 0,
-          "includeAll": false,
-          "label": "Job",
-          "multi": false,
-          "name": "job",
-          "options": [],
-          "query": "label_values(node_uname_info, job)",
-          "refresh": 1,
-          "regex": "",
-          "skipUrlSync": false,
-          "sort": 1,
-          "tagValuesQuery": "",
-          "tags": [],
-          "tagsQuery": "",
-          "type": "query",
-          "useTags": false
-        },
-        {
-          "allValue": null,
-          "current": {
-            "text": "2541916813cb",
-            "value": "2541916813cb"
-          },
-          "datasource": "$DS_PROMETHEUS",
-          "definition": "label_values(node_uname_info{job=~\"$job\"}, nodename)",
-          "hide": 0,
-          "includeAll": false,
-          "label": "Host:",
-          "multi": false,
-          "name": "name",
-          "options": [],
-          "query": "label_values(node_uname_info{job=~\"$job\"}, nodename)",
-          "refresh": 1,
-          "regex": "",
-          "skipUrlSync": false,
-          "sort": 1,
-          "tagValuesQuery": "",
-          "tags": [],
-          "tagsQuery": "",
-          "type": "query",
-          "useTags": false
-        },
-        {
-          "allValue": null,
-          "datasource": "$DS_PROMETHEUS",
-          "definition": "label_values(node_uname_info{nodename=\"$name\"}, instance)",
-          "hide": 2,
-          "includeAll": false,
-          "label": "Host:",
-          "multi": false,
-          "name": "node",
-          "options": [],
-          "query": "label_values(node_uname_info{nodename=\"$name\"}, instance)",
-          "refresh": 1,
-          "regex": "/([^:]+):.*/",
-          "skipUrlSync": false,
-          "sort": 1,
-          "tagValuesQuery": "",
-          "tags": [],
-          "tagsQuery": "",
-          "type": "query",
-          "useTags": false
-        },
-        {
-          "allValue": null,
-          "datasource": "$DS_PROMETHEUS",
-          "definition": "label_values(node_uname_info{instance=~\"$node:(.*)\"}, instance)",
-          "hide": 0,
-          "includeAll": false,
-          "label": "Port",
-          "multi": false,
-          "name": "port",
-          "options": [],
-          "query": "label_values(node_uname_info{instance=~\"$node:(.*)\"}, instance)",
-          "refresh": 1,
-          "regex": "/[^:]+:(.*)/",
-          "skipUrlSync": false,
-          "sort": 3,
-          "tagValuesQuery": "",
-          "tags": [],
-          "tagsQuery": "",
-          "type": "query",
-          "useTags": false
         }
       ]
     },
@@ -1692,4 +1631,4 @@
     },
     "timezone": "browser",
     "title": "Host and NuCypher monitoring"
-}
+  }
