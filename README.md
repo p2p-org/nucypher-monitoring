@@ -28,3 +28,17 @@ You can use bash-script `install-prometheus-node-exporter.sh` for automated inst
     ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose && \
     curl -fsSL https://raw.githubusercontent.com/docker/compose/1.25.0/contrib/completion/bash/docker-compose -o /etc/bash_completion.d/docker-compose
     ```
+
+3. Set in environment variables your external IP
+
+    ```shell
+    export EXTERNAL_IP=1.1.1.1
+    ```
+
+## Installation
+
+1. Run docker-compose
+
+    ```shell
+    docker-compose up -d
+    ```
