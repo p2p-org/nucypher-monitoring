@@ -867,176 +867,6 @@
             }
         },
         {
-            "cacheTimeout": null,
-            "colorBackground": false,
-            "colorValue": false,
-            "colors": [
-                "rgba(50, 172, 45, 0.97)",
-                "rgba(237, 129, 40, 0.89)",
-                "rgba(245, 54, 54, 0.9)"
-            ],
-            "datasource": "Prometheus",
-            "decimals": 0,
-            "description": "Total RootFS",
-            "format": "bytes",
-            "gauge": {
-                "maxValue": 100,
-                "minValue": 0,
-                "show": false,
-                "thresholdLabels": false,
-                "thresholdMarkers": true
-            },
-            "gridPos": {
-                "h": 2,
-                "w": 2,
-                "x": 20,
-                "y": 23
-            },
-            "id": 23,
-            "interval": null,
-            "links": [],
-            "mappingType": 1,
-            "mappingTypes": [
-                {
-                    "name": "value to text",
-                    "value": 1
-                },
-                {
-                    "name": "range to text",
-                    "value": 2
-                }
-            ],
-            "maxDataPoints": 100,
-            "maxPerRow": 6,
-            "nullPointMode": "null",
-            "nullText": null,
-            "postfix": "",
-            "postfixFontSize": "50%",
-            "prefix": "",
-            "prefixFontSize": "50%",
-            "rangeMaps": [
-                {
-                    "from": "null",
-                    "text": "N/A",
-                    "to": "null"
-                }
-            ],
-            "sparkline": {
-                "fillColor": "rgba(31, 118, 189, 0.18)",
-                "full": false,
-                "lineColor": "rgb(31, 120, 193)",
-                "show": false
-            },
-            "tableColumn": "",
-            "targets": [
-                {
-                    "expr": "node_filesystem_size_bytes{instance=~\"127.0.0.1:9100\",mountpoint=\"/\",fstype!=\"rootfs\"}",
-                    "format": "time_series",
-                    "hide": false,
-                    "instant": true,
-                    "intervalFactor": 1,
-                    "refId": "A",
-                    "step": 900
-                }
-            ],
-            "thresholds": "70,90",
-            "title": "RootFS Total",
-            "type": "singlestat",
-            "valueFontSize": "50%",
-            "valueMaps": [
-                {
-                    "op": "=",
-                    "text": "N/A",
-                    "value": "null"
-                }
-            ],
-            "valueName": "current"
-        },
-        {
-            "cacheTimeout": null,
-            "colorBackground": false,
-            "colorValue": false,
-            "colors": [
-                "rgba(245, 54, 54, 0.9)",
-                "rgba(237, 129, 40, 0.89)",
-                "rgba(50, 172, 45, 0.97)"
-            ],
-            "datasource": "Prometheus",
-            "decimals": 1,
-            "description": "System uptime",
-            "format": "s",
-            "gauge": {
-                "maxValue": 100,
-                "minValue": 0,
-                "show": false,
-                "thresholdLabels": false,
-                "thresholdMarkers": true
-            },
-            "gridPos": {
-                "h": 2,
-                "w": 2,
-                "x": 22,
-                "y": 23
-            },
-            "hideTimeOverride": true,
-            "id": 15,
-            "interval": null,
-            "links": [],
-            "mappingType": 1,
-            "mappingTypes": [
-                {
-                    "name": "value to text",
-                    "value": 1
-                },
-                {
-                    "name": "range to text",
-                    "value": 2
-                }
-            ],
-            "maxDataPoints": 100,
-            "nullPointMode": "null",
-            "nullText": null,
-            "postfix": "s",
-            "postfixFontSize": "30%",
-            "prefix": "",
-            "prefixFontSize": "50%",
-            "rangeMaps": [
-                {
-                    "from": "null",
-                    "text": "N/A",
-                    "to": "null"
-                }
-            ],
-            "sparkline": {
-                "fillColor": "rgba(31, 118, 189, 0.18)",
-                "full": false,
-                "lineColor": "rgb(31, 120, 193)",
-                "show": false
-            },
-            "tableColumn": "",
-            "targets": [
-                {
-                    "expr": "node_time_seconds{instance=~\"127.0.0.1:9100\"} - node_boot_time_seconds{instance=~\"127.0.0.1:9100\"}",
-                    "instant": true,
-                    "intervalFactor": 2,
-                    "refId": "A",
-                    "step": 1800
-                }
-            ],
-            "thresholds": "",
-            "title": "Uptime",
-            "type": "singlestat",
-            "valueFontSize": "30%",
-            "valueMaps": [
-                {
-                    "op": "=",
-                    "text": "N/A",
-                    "value": "null"
-                }
-            ],
-            "valueName": "current"
-        },
-        {
             "collapsed": false,
             "datasource": "Prometheus",
             "gridPos": {
@@ -1813,6 +1643,176 @@
             "title": "Sys Load (1m avg)",
             "type": "singlestat",
             "valueFontSize": "50%",
+            "valueMaps": [
+                {
+                    "op": "=",
+                    "text": "N/A",
+                    "value": "null"
+                }
+            ],
+            "valueName": "current"
+        },
+        {
+            "cacheTimeout": null,
+            "colorBackground": false,
+            "colorValue": false,
+            "colors": [
+                "rgba(50, 172, 45, 0.97)",
+                "rgba(237, 129, 40, 0.89)",
+                "rgba(245, 54, 54, 0.9)"
+            ],
+            "datasource": "Prometheus",
+            "decimals": 0,
+            "description": "Total RootFS",
+            "format": "bytes",
+            "gauge": {
+                "maxValue": 100,
+                "minValue": 0,
+                "show": false,
+                "thresholdLabels": false,
+                "thresholdMarkers": true
+            },
+            "gridPos": {
+                "h": 2,
+                "w": 2,
+                "x": 20,
+                "y": 34
+            },
+            "id": 23,
+            "interval": null,
+            "links": [],
+            "mappingType": 1,
+            "mappingTypes": [
+                {
+                    "name": "value to text",
+                    "value": 1
+                },
+                {
+                    "name": "range to text",
+                    "value": 2
+                }
+            ],
+            "maxDataPoints": 100,
+            "maxPerRow": 6,
+            "nullPointMode": "null",
+            "nullText": null,
+            "postfix": "",
+            "postfixFontSize": "50%",
+            "prefix": "",
+            "prefixFontSize": "50%",
+            "rangeMaps": [
+                {
+                    "from": "null",
+                    "text": "N/A",
+                    "to": "null"
+                }
+            ],
+            "sparkline": {
+                "fillColor": "rgba(31, 118, 189, 0.18)",
+                "full": false,
+                "lineColor": "rgb(31, 120, 193)",
+                "show": false
+            },
+            "tableColumn": "",
+            "targets": [
+                {
+                    "expr": "node_filesystem_size_bytes{instance=~\"127.0.0.1:9100\",mountpoint=\"/\",fstype!=\"rootfs\"}",
+                    "format": "time_series",
+                    "hide": false,
+                    "instant": true,
+                    "intervalFactor": 1,
+                    "refId": "A",
+                    "step": 900
+                }
+            ],
+            "thresholds": "70,90",
+            "title": "RootFS Total",
+            "type": "singlestat",
+            "valueFontSize": "50%",
+            "valueMaps": [
+                {
+                    "op": "=",
+                    "text": "N/A",
+                    "value": "null"
+                }
+            ],
+            "valueName": "current"
+        },
+        {
+            "cacheTimeout": null,
+            "colorBackground": false,
+            "colorValue": false,
+            "colors": [
+                "rgba(245, 54, 54, 0.9)",
+                "rgba(237, 129, 40, 0.89)",
+                "rgba(50, 172, 45, 0.97)"
+            ],
+            "datasource": "Prometheus",
+            "decimals": 1,
+            "description": "System uptime",
+            "format": "s",
+            "gauge": {
+                "maxValue": 100,
+                "minValue": 0,
+                "show": false,
+                "thresholdLabels": false,
+                "thresholdMarkers": true
+            },
+            "gridPos": {
+                "h": 2,
+                "w": 2,
+                "x": 22,
+                "y": 34
+            },
+            "hideTimeOverride": true,
+            "id": 15,
+            "interval": null,
+            "links": [],
+            "mappingType": 1,
+            "mappingTypes": [
+                {
+                    "name": "value to text",
+                    "value": 1
+                },
+                {
+                    "name": "range to text",
+                    "value": 2
+                }
+            ],
+            "maxDataPoints": 100,
+            "nullPointMode": "null",
+            "nullText": null,
+            "postfix": "s",
+            "postfixFontSize": "30%",
+            "prefix": "",
+            "prefixFontSize": "50%",
+            "rangeMaps": [
+                {
+                    "from": "null",
+                    "text": "N/A",
+                    "to": "null"
+                }
+            ],
+            "sparkline": {
+                "fillColor": "rgba(31, 118, 189, 0.18)",
+                "full": false,
+                "lineColor": "rgb(31, 120, 193)",
+                "show": false
+            },
+            "tableColumn": "",
+            "targets": [
+                {
+                    "expr": "node_time_seconds{instance=~\"127.0.0.1:9100\"} - node_boot_time_seconds{instance=~\"127.0.0.1:9100\"}",
+                    "instant": true,
+                    "intervalFactor": 2,
+                    "refId": "A",
+                    "step": 1800
+                }
+            ],
+            "thresholds": "",
+            "title": "Uptime",
+            "type": "singlestat",
+            "valueFontSize": "30%",
             "valueMaps": [
                 {
                     "op": "=",
