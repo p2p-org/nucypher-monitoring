@@ -7,10 +7,6 @@ ARGS="--collector.diskstats.ignored-devices=^(ram|loop|fd|(h|s|v|xv)d[a-z]|nvme\
       --collector.netdev.ignored-devices=^lo$ \
       --collector.textfile.directory=/var/lib/prometheus/node-exporter \
       --collector.systemd \
-      --no-collector.xfs \
-      --no-collector.zfs \
-      --no-collector.wifi \
-      --no-collector.mdadm \
       --web.telemetry-path=\"/metrics\" \
       --web.listen-address=\"127.0.0.1:9100\""
 
