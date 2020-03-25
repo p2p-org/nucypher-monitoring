@@ -64,5 +64,5 @@ You can use bash-script `install-prometheus-node-exporter.sh` for automated inst
 
 1. Get API key by [OpsGenie documentation](https://docs.opsgenie.com/docs/api-key-management);
 2. Repeat items 1,2,3 list above;
-4. Select `Type` -> `OpsGenie`
+4. Select `Type` -> `OpsGenie`;
 5. Fill `Name`, paste your API key to `API key`. Click on `Send Test` to check the sending of alerts and if it's OK click on `Save` button;
