@@ -9,6 +9,8 @@ tar -xzf - -C /usr/bin/ --strip-components=1 --wildcards --no-anchored 'node_exp
 cp ./node-exporter/node-exporter-default-config /etc/default/prometheus-node-exporter
 cp ./node-exporter/prometheus-node-exporter.service /etc/system/systemd/prometheus-node-exporter.service
 
+useradd --comment "Prometheus daemon" --home-dir /var/lib/prometheus --create-home --system --shell /usr/sbin/nologin prometheus
+
 systemd daemon-reload
 systemd enable prometheus-node-exporter.service
 systemd start prometheus-node-exporter.service
