@@ -25,8 +25,7 @@ services:
 
   grafana:
     image: grafana/grafana:6.7.0
-    environment:
-      - GF_SERVER_ROOT_URL=http://${GRAFANA_EXTERNAL_IP}:3000/
+    env_file: grafana.env
     volumes:
       - grafana_data:/var/lib/grafana
       - ./grafana/provisioning:/etc/grafana/provisioning

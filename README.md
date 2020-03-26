@@ -33,12 +33,23 @@ You can use bash-script `install-prometheus-node-exporter.sh` for automated inst
     ./install-prometheus-node-exporter.sh
     ```
 
+## Pre-Launching
+
+You need to setup environment variables.
+
+1. Open file `grafana.env` in any text editor;
+1. Replace `0.0.0.0` in `GF_SERVER_ROOT_URL` with your server's external address or DNS name for correct url in alert notifications;
+2. If you want to receive email notifications then you need to configure SMTP settings:
+    * Replace `host:port` in `GF_SMTP_HOST` with your SMTP server DNS name or IP and port;
+    * Set `GF_SMTP_USER`,`GF_SMTP_FROM_ADDRESS` and `GF_SMTP_PASSWORD` from which the notifications will be sent.
+3. Save changes.
+
 ## Launching
 
-1. Run docker-compose (replace `1.1.1.1` with your server's external address or DNS name for correct url in alert messages).
+1. Run docker-compose.
 
     ```shell
-    GRAFANA_EXTERNAL_IP="1.1.1.1" docker-compose up -d
+    docker-compose up -d
     ```
 
 ## Configure alert channels
@@ -63,6 +74,15 @@ You can use bash-script `install-prometheus-node-exporter.sh` for automated inst
 ### OpsGenie
 
 1. Get API key by [OpsGenie documentation](https://docs.opsgenie.com/docs/api-key-management);
-2. Repeat items 1,2,3 list above;
+2. Repeat items 2,3 list above;
 4. Select `Type` -> `OpsGenie`;
 5. Fill `Name`, paste your API key to `API key`. Click on `Send Test` to check the sending of alerts and if it's OK click on `Save` button;
+
+### Email
+
+1. Go to grafana `Alerting` -> `Notification channels`;
+2. Click on `New channel` button;
+3. Select `Type` -> `Email`;
+4. Fill `Name` and fill in the `Addresses` field with the Emails to which notifications will be received.
+
+    ![](./.pics/email_1.png)
