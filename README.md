@@ -20,10 +20,10 @@ The guide was tested on Ubuntu 18.04 and should be applicable to all deb-based d
     ```shell
     curl -fsSL https://get.docker.com -o- | sh
 
-    curl -fsSL https://github.com/docker/compose/releases/download/1.25.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose && \
+    curl -fsSL https://github.com/docker/compose/releases/download/1.25.4/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose && \
     chmod +x /usr/local/bin/docker-compose && \
     ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose && \
-    curl -fsSL https://raw.githubusercontent.com/docker/compose/1.25.0/contrib/completion/bash/docker-compose -o /etc/bash_completion.d/docker-compose
+    curl -fsSL https://raw.githubusercontent.com/docker/compose/1.25.4/contrib/completion/bash/docker-compose -o /etc/bash_completion.d/docker-compose
     ```
 
 2. Install node-exporter, set listening address to `127.0.0.1` and enable expose systemd metrics.
@@ -38,11 +38,21 @@ You can use bash-script `install-prometheus-node-exporter.sh` for automated inst
 You need to setup environment variables.
 
 1. Open file `grafana.env` in any text editor;
-1. Replace `0.0.0.0` in `GF_SERVER_ROOT_URL` with your server's external address or DNS name for correct url in alert notifications;
-2. If you want to receive email notifications then you need to configure SMTP settings:
+2. Replace `0.0.0.0` in `GF_SERVER_ROOT_URL` with your server's external address or DNS name for correct url in alert notifications;
+3. If you want to receive email notifications then you need to configure SMTP settings:
     * Replace `host:port` in `GF_SMTP_HOST` with your SMTP server DNS name or IP and port;
     * Set `GF_SMTP_USER`,`GF_SMTP_FROM_ADDRESS` and `GF_SMTP_PASSWORD` from which the notifications will be sent.
-3. Save changes.
+4. Save changes.
+
+For example, for the address admin@gmail.com:
+```shell
+GF_SMTP_HOST=smtp.gmail.com:465
+GF_SMTP_USER=admin@gmail.com
+GF_SMTP_PASSWORD=examplePassword
+GF_SMTP_FROM_ADDRESS=admin@gmail.com
+```
+
+Do not use your main e-mail account for this, register a throwaway.
 
 ## Launching
 

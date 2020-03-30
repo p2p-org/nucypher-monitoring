@@ -14,7 +14,7 @@ services:
       - '--web.console.libraries=/etc/prometheus/console_libraries'
       - '--web.console.templates=/etc/prometheus/consoles'
       - '--web.listen-address=127.0.0.1:9090'
-    image: prom/prometheus:v2.16.0
+    image: prom/prometheus:v2.17.1
     volumes:
       - ./prometheus:/etc/prometheus
       - prometheus_data:/prometheus
@@ -24,7 +24,7 @@ services:
     network_mode: host
 
   grafana:
-    image: grafana/grafana:6.7.0
+    image: grafana/grafana:6.7.1
     env_file: grafana.env
     volumes:
       - grafana_data:/var/lib/grafana
