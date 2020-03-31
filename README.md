@@ -15,7 +15,7 @@ The guide was tested on Ubuntu 18.04 and should be applicable to all deb-based d
 
 ## Installation
 
-1. Install docker and docker-compose if you didn't it before.
+1. Install docker and docker-compose if you didn't it before. Don't forget execute it from `root` user.
 
     ```shell
     curl -fsSL https://get.docker.com -o- | sh
@@ -27,7 +27,7 @@ The guide was tested on Ubuntu 18.04 and should be applicable to all deb-based d
     ```
 
 2. Install node-exporter, set listening address to `127.0.0.1` and enable expose systemd metrics.
-You can use bash-script `install-prometheus-node-exporter.sh` for automated install. Don't forget execute it from root user.
+You can use bash-script `install-prometheus-node-exporter.sh` for automated install. Don't forget execute it from `root` user.
 
     ```shell
     ./install-prometheus-node-exporter.sh
@@ -35,13 +35,15 @@ You can use bash-script `install-prometheus-node-exporter.sh` for automated inst
 
 ## Pre-Launching
 
+**NB: this setup exposes grafana publicly over HTTP. For a more secure setup consider getting a domain and setting up SSL or using [ngrok](https://ngrok.com/).**
+
 You need to setup environment variables.
 
 1. Open file `grafana.env` in any text editor;
 2. Replace `0.0.0.0` in `GF_SERVER_ROOT_URL` with your server's external address or DNS name for correct url in alert notifications;
 3. If you want to receive email notifications then you need to configure SMTP settings:
     * Replace `host:port` in `GF_SMTP_HOST` with your SMTP server DNS name or IP and port;
-    * Set `GF_SMTP_USER`,`GF_SMTP_FROM_ADDRESS` and `GF_SMTP_PASSWORD` from which the notifications will be sent.
+    * Set `GF_SMTP_USER`,`GF_SMTP_FROM_ADDRESS` and `GF_SMTP_PASSWORD` to Email/Password from which the notifications will be sent.
 4. Save changes.
 
 For example, for the address admin@gmail.com:
