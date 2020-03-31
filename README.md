@@ -64,6 +64,8 @@ Do not use your main e-mail account for this, register a throwaway.
     docker-compose up -d
     ```
 
+Now you can see your dashboard at http://your.server.ip.address.or.dns.name:3000/.
+
 ## Configure alert channels
 
 ### Telegram
