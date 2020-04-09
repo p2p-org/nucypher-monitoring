@@ -100,3 +100,54 @@ Now you can see your dashboard at http://your.server.ip.address.or.dns.name:3000
 4. Fill `Name` and fill in the `Addresses` field with the Emails to which notifications will be received.
 
     ![](./.pics/email_1.png)
+
+## Configure external HTTP monitoring
+
+We highly recommended to configure external HTTP monitoring for grafana dashboard and ursula's status page.
+
+### UptimeRobot.com
+
+#### Configure alert contacts
+
+##### Email
+
+1. Go to `My settings` (1) and click on `Create Alert Contact` (2).
+
+    ![](./.pics/uptimerobot_3.png)
+
+2. Fill all fields like on screenshot.
+
+    ![](./.pics/uptimerobot_7.png)
+
+3. Click on `Create Alert contact` (4).
+
+##### Telegram
+
+1. Go to `My settings` and click on `Create Alert Contact`.
+2. Fill all fields like on screenshot.
+3. Click on `Create Alert contact`.
+
+    ![](./.pics/uptimerobot_4.png)
+
+4. Click on custom link (see screenshot). It will open Telegram chat with UptimeRobot bot.
+
+    ![](./.pics/uptimerobot_5.png)
+
+5. Type command `/start`.
+
+    ![](./.pics/uptimerobot_6.png)
+
+
+#### Create monitor
+
+Create one monitor for Ursula's status page URL `https://YOUR_SERVER_EXTERNAL_IP:9151/status/` and another one for grafana dashboard URL (e.g. `http://YOUR_SERVER_EXTERNAL_IP:3000/`)
+
+1. Go to dashboard, click on `Add New Monitor`.
+
+    ![](./.pics/uptimerobot_1.png)
+
+2. Select `Monitor type` -> `HTTP(s)` (1).
+3. Fill `Friendly name` (2), `URL (or IP)` (3), and select needed `Alert contacts` (4)(5).
+4. Click on `Create Monitor` (6).
+
+    ![](./.pics/uptimerobot_2.png)

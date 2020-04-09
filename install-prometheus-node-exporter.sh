@@ -4,13 +4,15 @@ if ! [ $(id -u) = 0 ]; then
    exit 1
 fi
 set -eux
+# TODO: переделать установку node-exporter
 curl -sSfL https://github.com/prometheus/node_exporter/releases/download/v0.18.1/node_exporter-0.18.1.linux-amd64.tar.gz -o- | \
-tar -xzf - -C /usr/bin/ --strip-components=1 --wildcards --no-anchored 'node_exporter'
+tar -xzf - -C /tmp --strip-components=1 --wildcards --no-anchored 'node_exporter'
+cp /tmp/node_exporter /usr/bin/prometheus-node-exporter
 cp ./node-exporter/node-exporter-default-config /etc/default/prometheus-node-exporter
-cp ./node-exporter/prometheus-node-exporter.service /etc/system/systemd/prometheus-node-exporter.service
+cp ./node-exporter/prometheus-node-exporter.service /etc/systemd/system/prometheus-node-exporter.service
 
 useradd --comment "Prometheus daemon" --home-dir /var/lib/prometheus --create-home --system --shell /usr/sbin/nologin prometheus
 
-systemd daemon-reload
-systemd enable prometheus-node-exporter.service
-systemd start prometheus-node-exporter.service
+systemctl daemon-reload
+systemctl enable prometheus-node-exporter.service
+systemctl start prometheus-node-exporter.service
