@@ -1,0 +1,10 @@
+global:
+  scrape_interval: 15s
+  evaluation_interval: 30s
+
+scrape_configs:
+
+  - job_name: 'exporters'
+    file_sd_configs:
+      - files: ['conf.d/targets/*.yml']
+        refresh_interval: 1m
