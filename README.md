@@ -1,13 +1,20 @@
-# README
+# NuCypher Worker Node Monitoring Suite
+
+This is an opinionated, inexpensive and simple to set up suite of NuCypher node monitoring and alerting services using Prometheus and Grafana. It's boiled down to be of use to the less techincal node operators out there: in a professional setting we expect the users to have more sophisticated setups. 
 
 ## Disclaimer
 
 This guide was wrote for persons who complete NuCypher installation guide using [SystemD service installation](https://docs.nucypher.com/en/latest/guides/installation_guide.html#systemd-service-installation).  
-The guide was tested on Ubuntu 18.04 and should be applicable to all deb-based distributions.
+The guide was tested on Ubuntu 18.04 and should be applicable to all modern debian-based distributions.
+
+## Contribution policy
+
+Feel free to open issues or pull requests, but we won't accept PRs that make monitoring setup or maintenance significantly more difficult or expensive.
+
 
 ## Pre-Installation
 
-1. Clone repo
+1. Clone the repository
 
     ```shell
     git clone https://github.com/p2p-org/nucypher-monitoring.git
@@ -15,7 +22,7 @@ The guide was tested on Ubuntu 18.04 and should be applicable to all deb-based d
 
 ## Installation
 
-1. Install docker and docker-compose if you didn't it before. Don't forget execute it from `root` user.
+1. Install docker and docker-compose if you didn't it before. It needs root privileges to run (so, run it using `sudo` or under root user).
 
     ```shell
     curl -fsSL https://get.docker.com -o- | sh
@@ -27,13 +34,13 @@ The guide was tested on Ubuntu 18.04 and should be applicable to all deb-based d
     ```
 
 2. Install node-exporter, set listening address to `127.0.0.1` and enable expose systemd metrics.
-You can use bash-script `install-prometheus-node-exporter.sh` for automated install. Don't forget execute it from `root` user.
+You can use bash-script `install-prometheus-node-exporter.sh` to do all that automaticalle. It needs root privileges to run.
 
     ```shell
     ./install-prometheus-node-exporter.sh
     ```
 
-## Pre-Launching
+## Setting up environment
 
 **NB: this setup exposes grafana publicly over HTTP. For a more secure setup consider getting a domain and setting up SSL or using [ngrok](https://ngrok.com/).**
 
@@ -56,7 +63,7 @@ GF_SMTP_FROM_ADDRESS=admin@gmail.com
 
 Do not use your main e-mail account for this, register a throwaway.
 
-## Launching
+## Launch
 
 1. Run docker-compose.
 
@@ -68,9 +75,9 @@ Now you can see your dashboard at http://your.server.ip.address.or.dns.name:3000
 
 ## Configure alert channels
 
-### Telegram
+### Telegram bot alerting
 
-1. Get token by telegram bot [guide](https://core.telegram.org/bots#6-botfather) and your chat id (You can get it by @get_id_bot or any other way you know how);
+1. Get telegram bot token by using appropriate telegram bot [guide](https://core.telegram.org/bots#6-botfather), also get your chat id (e.g. via @get_id_bot);
 2. Go to grafana `Alerting` -> `Notification channels`;
 
     ![](./.pics/telegram_1.png)
@@ -81,18 +88,21 @@ Now you can see your dashboard at http://your.server.ip.address.or.dns.name:3000
 
 4. Select `Type` -> `Telegram`;
 5. Fill `Name`, paste your bot token to `BOT API Token` field and your chat id to `Chat ID` field. Click on `Send Test` to check the sending of alerts and if it's OK click on `Save` button;
-6. Additionally you can set another options for including image  into messages, send reminders, etc. Like on screenshot below.
+6. Additionally you can set another options for including image  into messages, send reminders, etc., like on screenshot below.
 
     ![](./.pics/telegram_3.png)
 
 ### OpsGenie
+OpsGenie allows for mobile network based alerts like SMS or phone calls. You can use an other similar service for that.
 
-1. Get API key by [OpsGenie documentation](https://docs.opsgenie.com/docs/api-key-management);
-2. Repeat items 2,3 list above;
+1. Get API key as described in [OpsGenie documentation](https://docs.opsgenie.com/docs/api-key-management);
+2. Repeat items 2, 3 on the list above;
 4. Select `Type` -> `OpsGenie`;
 5. Fill `Name`, paste your API key to `API key`. Click on `Send Test` to check the sending of alerts and if it's OK click on `Save` button;
 
 ### Email
+
+NB: for e-mail alerting to work you need to set up email-related environment variables, as described in Setting up environment
 
 1. Go to grafana `Alerting` -> `Notification channels`;
 2. Click on `New channel` button;
@@ -103,7 +113,7 @@ Now you can see your dashboard at http://your.server.ip.address.or.dns.name:3000
 
 ## Configure external HTTP monitoring
 
-We highly recommended to configure external HTTP monitoring for grafana dashboard and ursula's status page.
+We highly recommend to configure external HTTP monitoring for grafana dashboard and ursula's status page. That way you'll recieve an alert even if your server, ursula node or grafana service goes down. We describe using Uptime Robot because it has a pretty good entry level free plan at the time of the writing, but there are dozens of services like that that could be used for the purpose.
 
 ### UptimeRobot.com
 
