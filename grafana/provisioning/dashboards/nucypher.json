@@ -16,7 +16,7 @@
     "gnetId": 1860,
     "graphTooltip": 0,
     "id": 1,
-    "iteration": 1586783455557,
+    "iteration": 1587359350608,
     "links": [],
     "panels": [
         {
@@ -856,13 +856,13 @@
                         "query": {
                             "params": [
                                 "A",
-                                "1s",
+                                "1m",
                                 "now"
                             ]
                         },
                         "reducer": {
                             "params": [],
-                            "type": "avg"
+                            "type": "last"
                         },
                         "type": "query"
                     }
@@ -931,8 +931,7 @@
                     "fill": true,
                     "line": true,
                     "op": "lt",
-                    "value": 1,
-                    "yaxis": "left"
+                    "value": 1
                 }
             ],
             "timeFrom": null,
@@ -1512,7 +1511,7 @@
                     {
                         "evaluator": {
                             "params": [
-                                2
+                                1
                             ],
                             "type": "gt"
                         },
@@ -1610,8 +1609,7 @@
                     "fill": true,
                     "line": true,
                     "op": "gt",
-                    "value": 2,
-                    "yaxis": "left"
+                    "value": 1
                 }
             ],
             "timeFrom": "7d",
@@ -1843,7 +1841,7 @@
                             "params": [
                                 0
                             ],
-                            "type": "lt"
+                            "type": "gt"
                         },
                         "operator": {
                             "type": "and"
@@ -1851,7 +1849,7 @@
                         "query": {
                             "params": [
                                 "A",
-                                "1s",
+                                "5m",
                                 "now"
                             ]
                         },
@@ -1863,7 +1861,7 @@
                     }
                 ],
                 "executionErrorState": "alerting",
-                "for": "1s",
+                "for": "1m",
                 "frequency": "1m",
                 "handler": 1,
                 "name": "Missing confirmations alert",
@@ -1922,9 +1920,8 @@
                     "colorMode": "critical",
                     "fill": true,
                     "line": true,
-                    "op": "lt",
-                    "value": 0,
-                    "yaxis": "left"
+                    "op": "gt",
+                    "value": 0
                 }
             ],
             "timeFrom": null,
@@ -5272,7 +5269,7 @@
         ]
     },
     "time": {
-        "from": "now-1h",
+        "from": "now-3h",
         "to": "now"
     },
     "timepicker": {
