@@ -1908,7 +1908,7 @@
             "steppedLine": false,
             "targets": [
                 {
-                    "expr": "ursula_missing_confirmations{instance=\"127.0.0.1:9101\"}",
+                    "expr": "ursula_missing_commitments{instance=\"127.0.0.1:9101\"}",
                     "interval": "",
                     "intervalFactor": 1,
                     "legendFormat": "Missing confirmations",
