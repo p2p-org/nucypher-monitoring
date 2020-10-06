@@ -4,8 +4,8 @@ This is an opinionated, inexpensive and simple to set up suite of NuCypher node 
 
 ## Disclaimer
 
-This guide was wrote for persons who complete NuCypher installation guide using [SystemD service installation](https://docs.nucypher.com/en/latest/guides/installation_guide.html#systemd-service-installation).  
-The guide was tested on Ubuntu 18.04 and should be applicable to all modern debian-based distributions.
+This guide was wrote for NuCyphe [SystemD service installation](https://docs.nucypher.com/en/latest/guides/installation_guide.html#systemd-service-installation).  
+The guide was tested on Ubuntu 18.04 and should be applicable to all modern debian-based distributions. The metrics, dashboard and alerting would work fine on any setup, but you'll need to tweak it a little if you're using a dockerized deployment or an alternative operating system.
 
 ## Contribution policy
 
