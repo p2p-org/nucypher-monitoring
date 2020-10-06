@@ -77,7 +77,7 @@ Now you can see your dashboard at http://your.server.ip.address.or.dns.name:3000
 
 ### Telegram bot alerting
 
-1. Get telegram bot token by using appropriate telegram bot [guide](https://core.telegram.org/bots#6-botfather), also get your chat id (e.g. via @get_id_bot);
+1. Get telegram bot token by using appropriate telegram bot [guide](https://core.telegram.org/bots#6-botfather), also get your chat id (e.g. via @get_id_bot, see [additional guides in grafana community](https://community.grafana.com/t/telegram-alert-channel-configuration/242));
 2. Go to grafana `Alerting` -> `Notification channels`;
 
     ![](./.pics/telegram_1.png)
