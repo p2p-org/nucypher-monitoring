@@ -70,8 +70,7 @@ Do not use your main e-mail account for this, register a throwaway.
     ```shell
     docker-compose up -d
     ```
-
-Now you can see your dashboard at http://your.server.ip.address.or.dns.name:3000/.
+Now you can see your dashboard at http://your.server.ip.address.or.dns.name:3000/. In a fresh grafana isntall, you will be prompted for username/password. Use username `admin` with password `admin`. You will be prompted to change your password.
 
 ## Configure alert channels
 
