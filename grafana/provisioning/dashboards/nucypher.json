@@ -1,52 +1,4 @@
 {
-    "__inputs": [
-        {
-            "name": "DS_PROMETHEUS",
-            "label": "Prometheus",
-            "description": "",
-            "type": "datasource",
-            "pluginId": "prometheus",
-            "pluginName": "Prometheus"
-        }
-    ],
-    "__requires": [
-        {
-            "type": "panel",
-            "id": "gauge",
-            "name": "Gauge",
-            "version": ""
-        },
-        {
-            "type": "grafana",
-            "id": "grafana",
-            "name": "Grafana",
-            "version": "6.7.1"
-        },
-        {
-            "type": "panel",
-            "id": "graph",
-            "name": "Graph",
-            "version": ""
-        },
-        {
-            "type": "datasource",
-            "id": "prometheus",
-            "name": "Prometheus",
-            "version": "1.0.0"
-        },
-        {
-            "type": "panel",
-            "id": "singlestat",
-            "name": "Singlestat",
-            "version": ""
-        },
-        {
-            "type": "panel",
-            "id": "text",
-            "name": "Text",
-            "version": ""
-        }
-    ],
     "annotations": {
         "list": [
             {
@@ -63,13 +15,13 @@
     "editable": true,
     "gnetId": 1860,
     "graphTooltip": 0,
-    "id": null,
-    "iteration": 1591206145101,
+    "id": 1,
+    "iteration": 1603715621112,
     "links": [],
     "panels": [
         {
             "collapsed": false,
-            "datasource": "${DS_PROMETHEUS}",
+            "datasource": "Prometheus",
             "gridPos": {
                 "h": 1,
                 "w": 24,
@@ -90,7 +42,13 @@
                 "rgba(237, 129, 40, 0.89)",
                 "#d44a3a"
             ],
-            "datasource": "${DS_PROMETHEUS}",
+            "datasource": "Prometheus",
+            "fieldConfig": {
+                "defaults": {
+                    "custom": {}
+                },
+                "overrides": []
+            },
             "format": "none",
             "gauge": {
                 "maxValue": 100,
@@ -144,7 +102,7 @@
             "tableColumn": "",
             "targets": [
                 {
-                    "expr": "ursula_current_period{instance=\"$instance:$port\"}",
+                    "expr": "ursula_current_period{instance=\"127.0.0.1:9101\"}",
                     "instant": true,
                     "interval": "",
                     "legendFormat": "",
@@ -175,7 +133,13 @@
                 "rgba(237, 129, 40, 0.89)",
                 "#299c46"
             ],
-            "datasource": "${DS_PROMETHEUS}",
+            "datasource": "Prometheus",
+            "fieldConfig": {
+                "defaults": {
+                    "custom": {}
+                },
+                "overrides": []
+            },
             "format": "none",
             "gauge": {
                 "maxValue": 100,
@@ -230,7 +194,7 @@
             "tableColumn": "",
             "targets": [
                 {
-                    "expr": "ursula_activity_confirmed_period{instance=\"$instance:$port\"}",
+                    "expr": "ursula_activity_confirmed_period{instance=\"127.0.0.1:9101\"}",
                     "instant": true,
                     "interval": "",
                     "legendFormat": " ",
@@ -266,9 +230,15 @@
                 "rgba(237, 129, 40, 0.89)",
                 "#d44a3a"
             ],
-            "datasource": "${DS_PROMETHEUS}",
+            "datasource": "Prometheus",
             "decimals": null,
             "description": "",
+            "fieldConfig": {
+                "defaults": {
+                    "custom": {}
+                },
+                "overrides": []
+            },
             "format": "none",
             "gauge": {
                 "maxValue": 100,
@@ -322,7 +292,7 @@
             "tableColumn": "",
             "targets": [
                 {
-                    "expr": "ursula_staker_token_balance{instance=\"$instance:$port\"} / 10^18",
+                    "expr": "ursula_staker_token_balance{instance=\"127.0.0.1:9101\"} / 10^18",
                     "instant": false,
                     "interval": "",
                     "legendFormat": "",
@@ -353,9 +323,15 @@
                 "rgba(237, 129, 40, 0.89)",
                 "#299c46"
             ],
-            "datasource": "${DS_PROMETHEUS}",
+            "datasource": "Prometheus",
             "decimals": 10,
             "description": "",
+            "fieldConfig": {
+                "defaults": {
+                    "custom": {}
+                },
+                "overrides": []
+            },
             "format": "none",
             "gauge": {
                 "maxValue": 100,
@@ -409,7 +385,7 @@
             "tableColumn": "",
             "targets": [
                 {
-                    "expr": "ursula_staker_eth_balance{instance=\"$instance:$port\"}",
+                    "expr": "ursula_staker_eth_balance{instance=\"127.0.0.1:9101\"}",
                     "interval": "",
                     "legendFormat": "",
                     "refId": "A"
@@ -440,9 +416,15 @@
                 "rgba(237, 129, 40, 0.89)",
                 "#d44a3a"
             ],
-            "datasource": "${DS_PROMETHEUS}",
+            "datasource": "Prometheus",
             "decimals": null,
             "description": "All tokens that belong to the staker, including locked, unlocked and rewards.",
+            "fieldConfig": {
+                "defaults": {
+                    "custom": {}
+                },
+                "overrides": []
+            },
             "format": "none",
             "gauge": {
                 "maxValue": 100,
@@ -496,7 +478,7 @@
             "tableColumn": "",
             "targets": [
                 {
-                    "expr": "ursula_owned_tokens{instance=\"$instance:$port\"} / 10^18",
+                    "expr": "ursula_owned_tokens{instance=\"127.0.0.1:9101\"} / 10^18",
                     "instant": false,
                     "interval": "",
                     "legendFormat": "",
@@ -528,8 +510,14 @@
                 "rgba(237, 129, 40, 0.89)",
                 "#d44a3a"
             ],
-            "datasource": "${DS_PROMETHEUS}",
+            "datasource": "Prometheus",
             "decimals": null,
+            "fieldConfig": {
+                "defaults": {
+                    "custom": {}
+                },
+                "overrides": []
+            },
             "format": "none",
             "gauge": {
                 "maxValue": 100,
@@ -583,7 +571,7 @@
             "tableColumn": "",
             "targets": [
                 {
-                    "expr": "ursula_unlocked_tokens{instance=\"$instance:$port\"} / 10^18",
+                    "expr": "ursula_unlocked_tokens{instance=\"127.0.0.1:9101\"} / 10^18",
                     "instant": false,
                     "interval": "",
                     "legendFormat": "",
@@ -614,9 +602,15 @@
                 "rgba(237, 129, 40, 0.89)",
                 "#299c46"
             ],
-            "datasource": "${DS_PROMETHEUS}",
+            "datasource": "Prometheus",
             "decimals": 0,
             "description": "",
+            "fieldConfig": {
+                "defaults": {
+                    "custom": {}
+                },
+                "overrides": []
+            },
             "format": "none",
             "gauge": {
                 "maxValue": 100,
@@ -672,7 +666,7 @@
             "tableColumn": "",
             "targets": [
                 {
-                    "expr": "ursula_restaking{instance=\"$instance:$port\"}",
+                    "expr": "ursula_restaking{instance=\"127.0.0.1:9101\"}",
                     "format": "time_series",
                     "instant": true,
                     "interval": "",
@@ -714,8 +708,14 @@
                 "rgba(237, 129, 40, 0.89)",
                 "#d44a3a"
             ],
-            "datasource": "${DS_PROMETHEUS}",
+            "datasource": "Prometheus",
             "description": "",
+            "fieldConfig": {
+                "defaults": {
+                    "custom": {}
+                },
+                "overrides": []
+            },
             "format": "none",
             "gauge": {
                 "maxValue": 100,
@@ -771,7 +771,7 @@
             "tableColumn": "",
             "targets": [
                 {
-                    "expr": "ursula_wind_down{instance=\"$instance:$port\"}",
+                    "expr": "ursula_wind_down{instance=\"127.0.0.1:9101\"}",
                     "instant": true,
                     "interval": "",
                     "legendFormat": " ",
@@ -812,7 +812,13 @@
                 "rgba(237, 129, 40, 0.89)",
                 "#d44a3a"
             ],
-            "datasource": "${DS_PROMETHEUS}",
+            "datasource": "Prometheus",
+            "fieldConfig": {
+                "defaults": {
+                    "custom": {}
+                },
+                "overrides": []
+            },
             "format": "none",
             "gauge": {
                 "maxValue": 100,
@@ -866,7 +872,7 @@
             "tableColumn": "",
             "targets": [
                 {
-                    "expr": "ursula_current_eth_block_number{instance=\"$instance:$port\"}",
+                    "expr": "ursula_current_eth_block_number{instance=\"127.0.0.1:9101\"}",
                     "interval": "",
                     "legendFormat": "",
                     "refId": "A"
@@ -927,7 +933,14 @@
             "bars": true,
             "dashLength": 10,
             "dashes": false,
-            "datasource": "${DS_PROMETHEUS}",
+            "datasource": "Prometheus",
+            "fieldConfig": {
+                "defaults": {
+                    "custom": {},
+                    "links": []
+                },
+                "overrides": []
+            },
             "fill": 1,
             "fillGradient": 0,
             "gridPos": {
@@ -952,9 +965,10 @@
             "linewidth": 1,
             "nullPointMode": "null",
             "options": {
-                "dataLinks": []
+                "alertThreshold": true
             },
             "percentage": false,
+            "pluginVersion": "7.2.2",
             "pointradius": 2,
             "points": false,
             "renderer": "flot",
@@ -964,7 +978,7 @@
             "steppedLine": false,
             "targets": [
                 {
-                    "expr": "ursula_current_worker_is_me{instance=\"$instance:$port\"}",
+                    "expr": "ursula_current_worker_is_me{instance=\"127.0.0.1:9101\"}",
                     "hide": false,
                     "instant": true,
                     "interval": "",
@@ -1032,8 +1046,14 @@
                 "rgba(237, 129, 40, 0.89)",
                 "#d44a3a"
             ],
-            "datasource": "${DS_PROMETHEUS}",
+            "datasource": "Prometheus",
             "decimals": 0,
+            "fieldConfig": {
+                "defaults": {
+                    "custom": {}
+                },
+                "overrides": []
+            },
             "format": "none",
             "gauge": {
                 "maxValue": 100,
@@ -1088,7 +1108,7 @@
             "tableColumn": "",
             "targets": [
                 {
-                    "expr": "ursula_last_slashed_penalty{instance=\"$instance:$port\"}",
+                    "expr": "ursula_last_slashed_penalty{instance=\"127.0.0.1:9101\"}",
                     "interval": "",
                     "legendFormat": " ",
                     "refId": "A"
@@ -1123,9 +1143,15 @@
                 "rgba(237, 129, 40, 0.89)",
                 "#299c46"
             ],
-            "datasource": "${DS_PROMETHEUS}",
+            "datasource": "Prometheus",
             "decimals": 10,
             "description": "",
+            "fieldConfig": {
+                "defaults": {
+                    "custom": {}
+                },
+                "overrides": []
+            },
             "format": "none",
             "gauge": {
                 "maxValue": 100,
@@ -1179,7 +1205,7 @@
             "tableColumn": "",
             "targets": [
                 {
-                    "expr": "ursula_worker_eth_balance{instance=\"$instance:$port\"}",
+                    "expr": "ursula_worker_eth_balance{instance=\"127.0.0.1:9101\"}",
                     "interval": "",
                     "legendFormat": "",
                     "refId": "A"
@@ -1211,8 +1237,14 @@
                 "rgba(237, 129, 40, 0.89)",
                 "#299c46"
             ],
-            "datasource": "${DS_PROMETHEUS}",
+            "datasource": "Prometheus",
             "decimals": null,
+            "fieldConfig": {
+                "defaults": {
+                    "custom": {}
+                },
+                "overrides": []
+            },
             "format": "none",
             "gauge": {
                 "maxValue": 100,
@@ -1266,7 +1298,7 @@
             "tableColumn": "",
             "targets": [
                 {
-                    "expr": "ursula_active_stake{instance=\"$instance:$port\"} / 10^18",
+                    "expr": "ursula_active_stake{instance=\"127.0.0.1:9101\"} / 10^18",
                     "instant": false,
                     "interval": "",
                     "legendFormat": "",
@@ -1298,9 +1330,15 @@
                 "rgba(237, 129, 40, 0.89)",
                 "#d44a3a"
             ],
-            "datasource": "${DS_PROMETHEUS}",
+            "datasource": "Prometheus",
             "decimals": null,
             "description": "",
+            "fieldConfig": {
+                "defaults": {
+                    "custom": {}
+                },
+                "overrides": []
+            },
             "format": "none",
             "gauge": {
                 "maxValue": 100,
@@ -1354,7 +1392,7 @@
             "tableColumn": "",
             "targets": [
                 {
-                    "expr": "ursula_available_refund{instance=\"$instance:$port\"} / 10^18",
+                    "expr": "ursula_available_refund{instance=\"127.0.0.1:9101\"} / 10^18",
                     "instant": false,
                     "interval": "",
                     "legendFormat": "",
@@ -1386,9 +1424,15 @@
                 "rgba(237, 129, 40, 0.89)",
                 "#d44a3a"
             ],
-            "datasource": "${DS_PROMETHEUS}",
+            "datasource": "Prometheus",
             "decimals": null,
             "description": "",
+            "fieldConfig": {
+                "defaults": {
+                    "custom": {}
+                },
+                "overrides": []
+            },
             "format": "none",
             "gauge": {
                 "maxValue": 100,
@@ -1442,7 +1486,7 @@
             "tableColumn": "",
             "targets": [
                 {
-                    "expr": "ursula_policy_withdrawn_reward{instance=\"$instance:$port\"} / 10^18",
+                    "expr": "ursula_policy_withdrawn_reward{instance=\"127.0.0.1:9101\"} / 10^18",
                     "instant": false,
                     "interval": "",
                     "legendFormat": "",
@@ -1474,9 +1518,15 @@
                 "rgba(237, 129, 40, 0.89)",
                 "#299c46"
             ],
-            "datasource": "${DS_PROMETHEUS}",
+            "datasource": "Prometheus",
             "decimals": null,
             "description": "",
+            "fieldConfig": {
+                "defaults": {
+                    "custom": {}
+                },
+                "overrides": []
+            },
             "format": "none",
             "gauge": {
                 "maxValue": 100,
@@ -1530,7 +1580,7 @@
             "tableColumn": "",
             "targets": [
                 {
-                    "expr": "ursula_known_nodes{instance=\"$instance:$port\"}",
+                    "expr": "ursula_known_nodes{instance=\"127.0.0.1:9101\"}",
                     "instant": false,
                     "interval": "",
                     "legendFormat": "",
@@ -1593,7 +1643,14 @@
             "bars": true,
             "dashLength": 10,
             "dashes": false,
-            "datasource": "${DS_PROMETHEUS}",
+            "datasource": "Prometheus",
+            "fieldConfig": {
+                "defaults": {
+                    "custom": {},
+                    "links": []
+                },
+                "overrides": []
+            },
             "fill": 1,
             "fillGradient": 0,
             "gridPos": {
@@ -1620,9 +1677,10 @@
             "linewidth": 1,
             "nullPointMode": "null",
             "options": {
-                "dataLinks": []
+                "alertThreshold": true
             },
             "percentage": false,
+            "pluginVersion": "7.2.2",
             "pointradius": 2,
             "points": false,
             "renderer": "flot",
@@ -1632,7 +1690,7 @@
             "steppedLine": false,
             "targets": [
                 {
-                    "expr": "ursula_mined_value{instance=\"$instance:$port\"}/10^18",
+                    "expr": "ursula_mined_value{instance=\"127.0.0.1:9101\"}/10^18",
                     "hide": false,
                     "instant": false,
                     "interval": "24h",
@@ -1641,7 +1699,7 @@
                     "refId": "A"
                 },
                 {
-                    "expr": "ursula_current_period{instance=\"$instance:$port\"} - ursula_mined_period{instance=\"$instance:$port\"}",
+                    "expr": "ursula_current_period{instance=\"127.0.0.1:9101\"} - ursula_mined_period{instance=\"127.0.0.1:9101\"}",
                     "format": "time_series",
                     "hide": true,
                     "instant": false,
@@ -1706,7 +1764,14 @@
             "bars": false,
             "dashLength": 10,
             "dashes": false,
-            "datasource": "${DS_PROMETHEUS}",
+            "datasource": "Prometheus",
+            "fieldConfig": {
+                "defaults": {
+                    "custom": {},
+                    "links": []
+                },
+                "overrides": []
+            },
             "fill": 1,
             "fillGradient": 0,
             "gridPos": {
@@ -1730,9 +1795,10 @@
             "linewidth": 1,
             "nullPointMode": "null",
             "options": {
-                "dataLinks": []
+                "alertThreshold": true
             },
             "percentage": false,
+            "pluginVersion": "7.2.2",
             "pointradius": 2,
             "points": false,
             "renderer": "flot",
@@ -1742,7 +1808,7 @@
             "steppedLine": false,
             "targets": [
                 {
-                    "expr": "ursula_work_orders{instance=\"$instance:$port\"}",
+                    "expr": "ursula_work_orders{instance=\"127.0.0.1:9101\"}",
                     "interval": "",
                     "legendFormat": "Work orders",
                     "refId": "A"
@@ -1795,7 +1861,14 @@
             "bars": false,
             "dashLength": 10,
             "dashes": false,
-            "datasource": "${DS_PROMETHEUS}",
+            "datasource": "Prometheus",
+            "fieldConfig": {
+                "defaults": {
+                    "custom": {},
+                    "links": []
+                },
+                "overrides": []
+            },
             "fill": 1,
             "fillGradient": 0,
             "gridPos": {
@@ -1819,9 +1892,10 @@
             "linewidth": 1,
             "nullPointMode": "null",
             "options": {
-                "dataLinks": []
+                "alertThreshold": true
             },
             "percentage": false,
+            "pluginVersion": "7.2.2",
             "pointradius": 2,
             "points": false,
             "renderer": "flot",
@@ -1831,7 +1905,7 @@
             "steppedLine": false,
             "targets": [
                 {
-                    "expr": "ursula_policies_held{instance=\"$instance:$port\"}",
+                    "expr": "ursula_policies_held{instance=\"127.0.0.1:9101\"}",
                     "instant": false,
                     "interval": "",
                     "legendFormat": "Policies held",
@@ -1920,7 +1994,14 @@
             "bars": true,
             "dashLength": 10,
             "dashes": false,
-            "datasource": "${DS_PROMETHEUS}",
+            "datasource": "Prometheus",
+            "fieldConfig": {
+                "defaults": {
+                    "custom": {},
+                    "links": []
+                },
+                "overrides": []
+            },
             "fill": 1,
             "fillGradient": 0,
             "gridPos": {
@@ -1944,9 +2025,10 @@
             "linewidth": 1,
             "nullPointMode": "null",
             "options": {
-                "dataLinks": []
+                "alertThreshold": true
             },
             "percentage": false,
+            "pluginVersion": "7.2.2",
             "pointradius": 2,
             "points": false,
             "renderer": "flot",
@@ -1956,7 +2038,7 @@
             "steppedLine": false,
             "targets": [
                 {
-                    "expr": "ursula_missing_confirmations{instance=\"$instance:$port\"}",
+                    "expr": "ursula_missing_confirmations{instance=\"127.0.0.1:9101\"}",
                     "interval": "",
                     "intervalFactor": 1,
                     "legendFormat": "Missing confirmations",
@@ -2055,7 +2137,14 @@
             "bars": true,
             "dashLength": 10,
             "dashes": false,
-            "datasource": "${DS_PROMETHEUS}",
+            "datasource": "Prometheus",
+            "fieldConfig": {
+                "defaults": {
+                    "custom": {},
+                    "links": []
+                },
+                "overrides": []
+            },
             "fill": 1,
             "fillGradient": 0,
             "gridPos": {
@@ -2079,9 +2168,10 @@
             "linewidth": 1,
             "nullPointMode": "null",
             "options": {
-                "dataLinks": []
+                "alertThreshold": true
             },
             "percentage": false,
+            "pluginVersion": "7.2.2",
             "pointradius": 2,
             "points": false,
             "renderer": "flot",
@@ -2091,7 +2181,7 @@
             "steppedLine": false,
             "targets": [
                 {
-                    "expr": "ursula_last_slashed_penalty{instance=\"$instance:$port\"}",
+                    "expr": "ursula_last_slashed_penalty{instance=\"127.0.0.1:9101\"}",
                     "instant": false,
                     "interval": "",
                     "intervalFactor": 1,
@@ -2099,7 +2189,7 @@
                     "refId": "A"
                 },
                 {
-                    "expr": "ursula_current_eth_block_number{instance=\"$instance:$port\"} - ursula_last_slashed_penalty_block_number{instance=\"$instance:$port\"}",
+                    "expr": "ursula_current_eth_block_number{instance=\"127.0.0.1:9101\"} - ursula_last_slashed_penalty_block_number{instance=\"127.0.0.1:9101\"}",
                     "hide": true,
                     "instant": false,
                     "interval": "",
@@ -2114,16 +2204,14 @@
                     "fill": true,
                     "line": true,
                     "op": "gt",
-                    "value": 0,
-                    "yaxis": "left"
+                    "value": 0
                 },
                 {
                     "colorMode": "critical",
                     "fill": true,
                     "line": true,
                     "op": "lt",
-                    "value": 100,
-                    "yaxis": "left"
+                    "value": 100
                 }
             ],
             "timeFrom": null,
@@ -2231,7 +2319,14 @@
             "bars": false,
             "dashLength": 10,
             "dashes": false,
-            "datasource": "${DS_PROMETHEUS}",
+            "datasource": "Prometheus",
+            "fieldConfig": {
+                "defaults": {
+                    "custom": {},
+                    "links": []
+                },
+                "overrides": []
+            },
             "fill": 1,
             "fillGradient": 0,
             "gridPos": {
@@ -2257,9 +2352,10 @@
             "linewidth": 1,
             "nullPointMode": "null",
             "options": {
-                "dataLinks": []
+                "alertThreshold": true
             },
             "percentage": false,
+            "pluginVersion": "7.2.2",
             "pointradius": 2,
             "points": false,
             "renderer": "flot",
@@ -2269,13 +2365,13 @@
             "steppedLine": false,
             "targets": [
                 {
-                    "expr": "ursula_staker_eth_balance{instance=\"$instance:$port\"}",
+                    "expr": "ursula_staker_eth_balance{instance=\"127.0.0.1:9101\"}",
                     "interval": "",
                     "legendFormat": "Staker ETH balance",
                     "refId": "A"
                 },
                 {
-                    "expr": "ursula_worker_eth_balance{instance=\"$instance:$port\"}",
+                    "expr": "ursula_worker_eth_balance{instance=\"127.0.0.1:9101\"}",
                     "interval": "",
                     "legendFormat": "Worker ETH balance",
                     "refId": "B"
@@ -2372,7 +2468,14 @@
             "bars": false,
             "dashLength": 10,
             "dashes": false,
-            "datasource": "${DS_PROMETHEUS}",
+            "datasource": "Prometheus",
+            "fieldConfig": {
+                "defaults": {
+                    "custom": {},
+                    "links": []
+                },
+                "overrides": []
+            },
             "fill": 1,
             "fillGradient": 0,
             "gridPos": {
@@ -2398,9 +2501,10 @@
             "linewidth": 1,
             "nullPointMode": "null",
             "options": {
-                "dataLinks": []
+                "alertThreshold": true
             },
             "percentage": false,
+            "pluginVersion": "7.2.2",
             "pointradius": 2,
             "points": false,
             "renderer": "flot",
@@ -2410,7 +2514,7 @@
             "steppedLine": false,
             "targets": [
                 {
-                    "expr": "ursula_active_stake{instance=\"$instance:$port\"} / 10^18",
+                    "expr": "ursula_active_stake{instance=\"127.0.0.1:9101\"} / 10^18",
                     "interval": "",
                     "legendFormat": "NU amount",
                     "refId": "A"
@@ -2507,8 +2611,15 @@
             "bars": false,
             "dashLength": 10,
             "dashes": false,
-            "datasource": "${DS_PROMETHEUS}",
+            "datasource": "Prometheus",
             "decimals": null,
+            "fieldConfig": {
+                "defaults": {
+                    "custom": {},
+                    "links": []
+                },
+                "overrides": []
+            },
             "fill": 1,
             "fillGradient": 0,
             "gridPos": {
@@ -2534,9 +2645,10 @@
             "linewidth": 1,
             "nullPointMode": "null",
             "options": {
-                "dataLinks": []
+                "alertThreshold": true
             },
             "percentage": false,
+            "pluginVersion": "7.2.2",
             "pointradius": 2,
             "points": false,
             "renderer": "flot",
@@ -2546,7 +2658,7 @@
             "steppedLine": false,
             "targets": [
                 {
-                    "expr": "ursula_known_nodes{instance=\"$instance:$port\"}",
+                    "expr": "ursula_known_nodes{instance=\"127.0.0.1:9101\"}",
                     "interval": "",
                     "legendFormat": "Nodes",
                     "refId": "A"
@@ -2558,8 +2670,7 @@
                     "fill": true,
                     "line": true,
                     "op": "lt",
-                    "value": 1,
-                    "yaxis": "left"
+                    "value": 1
                 }
             ],
             "timeFrom": null,
@@ -2605,7 +2716,7 @@
         },
         {
             "collapsed": true,
-            "datasource": "${DS_PROMETHEUS}",
+            "datasource": "Prometheus",
             "gridPos": {
                 "h": 1,
                 "w": 24,
@@ -2619,7 +2730,7 @@
                     "bars": false,
                     "dashLength": 10,
                     "dashes": false,
-                    "datasource": "${DS_PROMETHEUS}",
+                    "datasource": "Prometheus",
                     "fill": 1,
                     "fillGradient": 0,
                     "gridPos": {
@@ -2655,7 +2766,7 @@
                     "steppedLine": false,
                     "targets": [
                         {
-                            "expr": "ursula_worklock_bid_depositedETH{instance=\"$instance:$port\"}/10^18",
+                            "expr": "ursula_worklock_bid_depositedETH{instance=\"127.0.0.1:9101\"}/10^18",
                             "interval": "",
                             "legendFormat": "Bid ETH",
                             "refId": "A"
@@ -2707,7 +2818,7 @@
                     "bars": false,
                     "dashLength": 10,
                     "dashes": false,
-                    "datasource": "${DS_PROMETHEUS}",
+                    "datasource": "Prometheus",
                     "fill": 1,
                     "fillGradient": 0,
                     "gridPos": {
@@ -2743,7 +2854,7 @@
                     "steppedLine": false,
                     "targets": [
                         {
-                            "expr": "ursula_worklock_claimed_claimedTokens{instance=\"$instance:$port\"} / 10^18",
+                            "expr": "ursula_worklock_claimed_claimedTokens{instance=\"127.0.0.1:9101\"} / 10^18",
                             "interval": "",
                             "legendFormat": "Claimed NU",
                             "refId": "A"
@@ -2795,7 +2906,7 @@
                     "bars": false,
                     "dashLength": 10,
                     "dashes": false,
-                    "datasource": "${DS_PROMETHEUS}",
+                    "datasource": "Prometheus",
                     "fill": 1,
                     "fillGradient": 0,
                     "gridPos": {
@@ -2831,7 +2942,7 @@
                     "steppedLine": false,
                     "targets": [
                         {
-                            "expr": "ursula_worklock_refund_refundETH{instance=\"$instance:$port\"}/10^18",
+                            "expr": "ursula_worklock_refund_refundETH{instance=\"127.0.0.1:9101\"}/10^18",
                             "interval": "",
                             "legendFormat": "Refunded ETH",
                             "refId": "A"
@@ -2883,7 +2994,7 @@
                     "bars": false,
                     "dashLength": 10,
                     "dashes": false,
-                    "datasource": "${DS_PROMETHEUS}",
+                    "datasource": "Prometheus",
                     "fill": 1,
                     "fillGradient": 0,
                     "gridPos": {
@@ -2919,13 +3030,13 @@
                     "steppedLine": false,
                     "targets": [
                         {
-                            "expr": "ursula_worklock_refund_completedWork{instance=\"$instance:$port\"}",
+                            "expr": "ursula_worklock_refund_completedWork{instance=\"127.0.0.1:9101\"}",
                             "interval": "",
                             "legendFormat": "Completed work",
                             "refId": "A"
                         },
                         {
-                            "expr": "ursula_worklock_refund_remaining_work{instance=\"$instance:$port\"}",
+                            "expr": "ursula_worklock_refund_remaining_work{instance=\"127.0.0.1:9101\"}",
                             "interval": "",
                             "legendFormat": "Remaining work",
                             "refId": "B"
@@ -2978,7 +3089,7 @@
                     "bars": false,
                     "dashLength": 10,
                     "dashes": false,
-                    "datasource": "${DS_PROMETHEUS}",
+                    "datasource": "Prometheus",
                     "fill": 1,
                     "fillGradient": 0,
                     "gridPos": {
@@ -3014,7 +3125,7 @@
                     "steppedLine": false,
                     "targets": [
                         {
-                            "expr": "ursula_worklock_deposited_value{instance=\"$instance:$port\"}",
+                            "expr": "ursula_worklock_deposited_value{instance=\"127.0.0.1:9101\"}",
                             "interval": "",
                             "legendFormat": "Deposited",
                             "refId": "A"
@@ -3067,7 +3178,7 @@
         },
         {
             "collapsed": true,
-            "datasource": "${DS_PROMETHEUS}",
+            "datasource": "Prometheus",
             "gridPos": {
                 "h": 1,
                 "w": 24,
@@ -3079,7 +3190,7 @@
                 {
                     "cacheTimeout": null,
                     "content": "<center><h1>$app_version</h1></center>",
-                    "datasource": "${DS_PROMETHEUS}",
+                    "datasource": "Prometheus",
                     "gridPos": {
                         "h": 3,
                         "w": 3,
@@ -3107,7 +3218,7 @@
                 {
                     "cacheTimeout": null,
                     "content": "<center><h1>$network</h1></center>",
-                    "datasource": "${DS_PROMETHEUS}",
+                    "datasource": "Prometheus",
                     "gridPos": {
                         "h": 3,
                         "w": 3,
@@ -3141,7 +3252,7 @@
                         "rgba(237, 129, 40, 0.89)",
                         "#d44a3a"
                     ],
-                    "datasource": "${DS_PROMETHEUS}",
+                    "datasource": "Prometheus",
                     "decimals": 1,
                     "format": "s",
                     "gauge": {
@@ -3197,7 +3308,7 @@
                     "tableColumn": "",
                     "targets": [
                         {
-                            "expr": "time() - process_start_time_seconds{instance=\"$instance:$port\"}",
+                            "expr": "time() - process_start_time_seconds{instance=\"127.0.0.1:9101\"}",
                             "interval": "",
                             "legendFormat": "",
                             "refId": "A"
@@ -3224,7 +3335,7 @@
                     "bars": false,
                     "dashLength": 10,
                     "dashes": false,
-                    "datasource": "${DS_PROMETHEUS}",
+                    "datasource": "Prometheus",
                     "description": "",
                     "fill": 1,
                     "fillGradient": 0,
@@ -3263,7 +3374,7 @@
                     "steppedLine": false,
                     "targets": [
                         {
-                            "expr": "rate(process_cpu_seconds_total{instance=\"$instance:$port\"}[$__interval])",
+                            "expr": "rate(process_cpu_seconds_total{instance=\"127.0.0.1:9101\"}[$__interval])",
                             "hide": false,
                             "interval": "",
                             "legendFormat": "CPU usage",
@@ -3316,7 +3427,7 @@
                     "bars": false,
                     "dashLength": 10,
                     "dashes": false,
-                    "datasource": "${DS_PROMETHEUS}",
+                    "datasource": "Prometheus",
                     "fill": 1,
                     "fillGradient": 0,
                     "gridPos": {
@@ -3353,13 +3464,13 @@
                     "steppedLine": false,
                     "targets": [
                         {
-                            "expr": "process_virtual_memory_bytes{instance=\"$instance:$port\"}",
+                            "expr": "process_virtual_memory_bytes{instance=\"127.0.0.1:9101\"}",
                             "interval": "",
                             "legendFormat": "Virtual memory",
                             "refId": "A"
                         },
                         {
-                            "expr": "process_resident_memory_bytes{instance=\"$instance:$port\"}",
+                            "expr": "process_resident_memory_bytes{instance=\"127.0.0.1:9101\"}",
                             "interval": "",
                             "legendFormat": "Resident memory",
                             "refId": "B"
@@ -3446,7 +3557,7 @@
                     "bars": false,
                     "dashLength": 10,
                     "dashes": false,
-                    "datasource": "${DS_PROMETHEUS}",
+                    "datasource": "Prometheus",
                     "fill": 1,
                     "fillGradient": 0,
                     "gridPos": {
@@ -3483,13 +3594,13 @@
                     "steppedLine": false,
                     "targets": [
                         {
-                            "expr": "process_open_fds{instance=\"$instance:$port\"}",
+                            "expr": "process_open_fds{instance=\"127.0.0.1:9101\"}",
                             "interval": "",
                             "legendFormat": "Opened",
                             "refId": "A"
                         },
                         {
-                            "expr": "process_max_fds{instance=\"$instance:$port\"}",
+                            "expr": "process_max_fds{instance=\"127.0.0.1:9101\"}",
                             "format": "time_series",
                             "hide": false,
                             "instant": false,
@@ -3498,7 +3609,7 @@
                             "refId": "B"
                         },
                         {
-                            "expr": " process_open_fds{instance=\"$instance:$port\"}/process_max_fds{instance=\"$instance:$port\"}*100",
+                            "expr": " process_open_fds{instance=\"127.0.0.1:9101\"}/process_max_fds{instance=\"127.0.0.1:9101\"}*100",
                             "hide": true,
                             "interval": "",
                             "legendFormat": "",
@@ -3561,7 +3672,7 @@
         },
         {
             "collapsed": true,
-            "datasource": "${DS_PROMETHEUS}",
+            "datasource": "Prometheus",
             "gridPos": {
                 "h": 1,
                 "w": 24,
@@ -3572,7 +3683,7 @@
             "panels": [
                 {
                     "cacheTimeout": null,
-                    "datasource": "${DS_PROMETHEUS}",
+                    "datasource": "Prometheus",
                     "description": "Busy state of all CPU cores together",
                     "gridPos": {
                         "h": 4,
@@ -3645,7 +3756,7 @@
                 },
                 {
                     "cacheTimeout": null,
-                    "datasource": "${DS_PROMETHEUS}",
+                    "datasource": "Prometheus",
                     "description": "Busy state of all CPU cores together (5 min average)",
                     "gridPos": {
                         "h": 4,
@@ -3718,7 +3829,7 @@
                 },
                 {
                     "cacheTimeout": null,
-                    "datasource": "${DS_PROMETHEUS}",
+                    "datasource": "Prometheus",
                     "description": "Busy state of all CPU cores together (15 min average)",
                     "gridPos": {
                         "h": 4,
@@ -3790,7 +3901,7 @@
                 },
                 {
                     "cacheTimeout": null,
-                    "datasource": "${DS_PROMETHEUS}",
+                    "datasource": "Prometheus",
                     "description": "Non available RAM memory",
                     "gridPos": {
                         "h": 4,
@@ -3865,7 +3976,7 @@
                 },
                 {
                     "cacheTimeout": null,
-                    "datasource": "${DS_PROMETHEUS}",
+                    "datasource": "Prometheus",
                     "description": "Used Swap",
                     "gridPos": {
                         "h": 4,
@@ -3936,7 +4047,7 @@
                 },
                 {
                     "cacheTimeout": null,
-                    "datasource": "${DS_PROMETHEUS}",
+                    "datasource": "Prometheus",
                     "description": "Used Root FS",
                     "gridPos": {
                         "h": 4,
@@ -4015,7 +4126,7 @@
                         "rgba(237, 129, 40, 0.89)",
                         "rgba(50, 172, 45, 0.97)"
                     ],
-                    "datasource": "${DS_PROMETHEUS}",
+                    "datasource": "Prometheus",
                     "description": "Total number of CPU cores",
                     "format": "short",
                     "gauge": {
@@ -4097,7 +4208,7 @@
                         "rgba(237, 129, 40, 0.89)",
                         "rgba(50, 172, 45, 0.97)"
                     ],
-                    "datasource": "${DS_PROMETHEUS}",
+                    "datasource": "Prometheus",
                     "decimals": 0,
                     "description": "Total RAM",
                     "format": "bytes",
@@ -4181,7 +4292,7 @@
                         "rgba(237, 129, 40, 0.89)",
                         "rgba(50, 172, 45, 0.97)"
                     ],
-                    "datasource": "${DS_PROMETHEUS}",
+                    "datasource": "Prometheus",
                     "decimals": 0,
                     "description": "Total SWAP",
                     "format": "bytes",
@@ -4265,7 +4376,7 @@
                         "rgba(237, 129, 40, 0.89)",
                         "rgba(50, 172, 45, 0.97)"
                     ],
-                    "datasource": "${DS_PROMETHEUS}",
+                    "datasource": "Prometheus",
                     "decimals": 2,
                     "description": "System Load (1m avg)",
                     "format": "short",
@@ -4350,7 +4461,7 @@
                         "rgba(237, 129, 40, 0.89)",
                         "rgba(245, 54, 54, 0.9)"
                     ],
-                    "datasource": "${DS_PROMETHEUS}",
+                    "datasource": "Prometheus",
                     "decimals": 0,
                     "description": "Total RootFS",
                     "format": "bytes",
@@ -4436,7 +4547,7 @@
                         "rgba(237, 129, 40, 0.89)",
                         "rgba(50, 172, 45, 0.97)"
                     ],
-                    "datasource": "${DS_PROMETHEUS}",
+                    "datasource": "Prometheus",
                     "decimals": 1,
                     "description": "System uptime",
                     "format": "s",
@@ -4518,7 +4629,7 @@
         },
         {
             "collapsed": true,
-            "datasource": "${DS_PROMETHEUS}",
+            "datasource": "Prometheus",
             "gridPos": {
                 "h": 1,
                 "w": 24,
@@ -4582,16 +4693,23 @@
                     "bars": false,
                     "dashLength": 10,
                     "dashes": false,
-                    "datasource": "${DS_PROMETHEUS}",
+                    "datasource": "Prometheus",
                     "decimals": 2,
                     "description": "Basic CPU info",
+                    "fieldConfig": {
+                        "defaults": {
+                            "custom": {},
+                            "links": []
+                        },
+                        "overrides": []
+                    },
                     "fill": 4,
                     "fillGradient": 0,
                     "gridPos": {
                         "h": 7,
                         "w": 12,
                         "x": 0,
-                        "y": 5
+                        "y": 35
                     },
                     "hiddenSeries": false,
                     "id": 77,
@@ -4616,9 +4734,10 @@
                     "maxPerRow": 6,
                     "nullPointMode": "null",
                     "options": {
-                        "dataLinks": []
+                        "alertThreshold": true
                     },
                     "percentage": true,
+                    "pluginVersion": "7.2.2",
                     "pointradius": 5,
                     "points": false,
                     "renderer": "flot",
@@ -4814,16 +4933,23 @@
                     "bars": false,
                     "dashLength": 10,
                     "dashes": false,
-                    "datasource": "${DS_PROMETHEUS}",
+                    "datasource": "Prometheus",
                     "decimals": 2,
                     "description": "Basic memory usage",
+                    "fieldConfig": {
+                        "defaults": {
+                            "custom": {},
+                            "links": []
+                        },
+                        "overrides": []
+                    },
                     "fill": 4,
                     "fillGradient": 0,
                     "gridPos": {
                         "h": 7,
                         "w": 12,
                         "x": 12,
-                        "y": 5
+                        "y": 35
                     },
                     "hiddenSeries": false,
                     "id": 78,
@@ -4845,9 +4971,10 @@
                     "maxPerRow": 6,
                     "nullPointMode": "null",
                     "options": {
-                        "dataLinks": []
+                        "alertThreshold": true
                     },
                     "percentage": false,
+                    "pluginVersion": "7.2.2",
                     "pointradius": 5,
                     "points": false,
                     "renderer": "flot",
@@ -4999,15 +5126,22 @@
                     "bars": false,
                     "dashLength": 10,
                     "dashes": false,
-                    "datasource": "${DS_PROMETHEUS}",
+                    "datasource": "Prometheus",
                     "description": "Basic network info per interface",
+                    "fieldConfig": {
+                        "defaults": {
+                            "custom": {},
+                            "links": []
+                        },
+                        "overrides": []
+                    },
                     "fill": 4,
                     "fillGradient": 0,
                     "gridPos": {
                         "h": 7,
                         "w": 12,
                         "x": 0,
-                        "y": 12
+                        "y": 42
                     },
                     "hiddenSeries": false,
                     "id": 74,
@@ -5031,9 +5165,10 @@
                     "links": [],
                     "nullPointMode": "null",
                     "options": {
-                        "dataLinks": []
+                        "alertThreshold": true
                     },
                     "percentage": false,
+                    "pluginVersion": "7.2.2",
                     "pointradius": 5,
                     "points": false,
                     "renderer": "flot",
@@ -5147,16 +5282,23 @@
                     "bars": false,
                     "dashLength": 10,
                     "dashes": false,
-                    "datasource": "${DS_PROMETHEUS}",
+                    "datasource": "Prometheus",
                     "decimals": 3,
                     "description": "Disk space used of all filesystems mounted",
+                    "fieldConfig": {
+                        "defaults": {
+                            "custom": {},
+                            "links": []
+                        },
+                        "overrides": []
+                    },
                     "fill": 4,
                     "fillGradient": 0,
                     "gridPos": {
                         "h": 7,
                         "w": 12,
                         "x": 12,
-                        "y": 12
+                        "y": 42
                     },
                     "height": "",
                     "hiddenSeries": false,
@@ -5180,9 +5322,10 @@
                     "maxPerRow": 6,
                     "nullPointMode": "null",
                     "options": {
-                        "dataLinks": []
+                        "alertThreshold": true
                     },
                     "percentage": false,
+                    "pluginVersion": "7.2.2",
                     "pointradius": 5,
                     "points": false,
                     "renderer": "flot",
@@ -5257,7 +5400,7 @@
         }
     ],
     "refresh": "10s",
-    "schemaVersion": 22,
+    "schemaVersion": 26,
     "style": "dark",
     "tags": [],
     "templating": {
@@ -5265,12 +5408,16 @@
             {
                 "allFormat": "glob",
                 "allValue": null,
-                "current": {},
-                "datasource": "${DS_PROMETHEUS}",
+                "current": {
+                    "isNone": true,
+                    "selected": false,
+                    "text": "None",
+                    "value": ""
+                },
+                "datasource": "Prometheus",
                 "definition": "label_values(ursula_host_info_info, domains)",
                 "hide": 2,
                 "includeAll": false,
-                "index": -1,
                 "label": "Network",
                 "multi": false,
                 "name": "network",
@@ -5289,12 +5436,16 @@
             {
                 "allFormat": "glob",
                 "allValue": null,
-                "current": {},
-                "datasource": "${DS_PROMETHEUS}",
+                "current": {
+                    "isNone": true,
+                    "selected": false,
+                    "text": "None",
+                    "value": ""
+                },
+                "datasource": "Prometheus",
                 "definition": "label_values(ursula_host_info_info, app_version)",
                 "hide": 2,
                 "includeAll": false,
-                "index": -1,
                 "label": "App version",
                 "multi": false,
                 "name": "app_version",
@@ -5302,54 +5453,6 @@
                 "query": "label_values(ursula_host_info_info, app_version)",
                 "refresh": 1,
                 "regex": "",
-                "skipUrlSync": false,
-                "sort": 0,
-                "tagValuesQuery": "",
-                "tags": [],
-                "tagsQuery": "",
-                "type": "query",
-                "useTags": false
-            },
-            {
-                "allFormat": "glob",
-                "allValue": null,
-                "current": {},
-                "datasource": "${DS_PROMETHEUS}",
-                "definition": "label_values(ursula_host_info_info, instance)",
-                "hide": 0,
-                "includeAll": false,
-                "index": -1,
-                "label": "Port",
-                "multi": false,
-                "name": "port",
-                "options": [],
-                "query": "label_values(ursula_host_info_info, instance)",
-                "refresh": 1,
-                "regex": "/.*:([0-9]+)/",
-                "skipUrlSync": false,
-                "sort": 0,
-                "tagValuesQuery": "",
-                "tags": [],
-                "tagsQuery": "",
-                "type": "query",
-                "useTags": false
-            },
-            {
-                "allFormat": "glob",
-                "allValue": null,
-                "current": {},
-                "datasource": "${DS_PROMETHEUS}",
-                "definition": "label_values(ursula_host_info_info, instance)",
-                "hide": 0,
-                "includeAll": false,
-                "index": -1,
-                "label": "Instance",
-                "multi": false,
-                "name": "instance",
-                "options": [],
-                "query": "label_values(ursula_host_info_info, instance)",
-                "refresh": 1,
-                "regex": "/([.0-9]+):[0-9]+/",
                 "skipUrlSync": false,
                 "sort": 0,
                 "tagValuesQuery": "",
@@ -5392,8 +5495,5 @@
     "timezone": "browser",
     "title": "Host and NuCypher monitoring",
     "uid": "OfHCwRjZz",
-    "variables": {
-        "list": []
-    },
-    "version": 37
+    "version": 3
 }
