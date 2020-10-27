@@ -269,6 +269,12 @@
             "datasource": "${DS_PROMETHEUS}",
             "decimals": null,
             "description": "",
+            "fieldConfig": {
+                "defaults": {
+                    "custom": {}
+                },
+                "overrides": []
+            },
             "format": "none",
             "gauge": {
                 "maxValue": 100,
@@ -356,6 +362,12 @@
             "datasource": "${DS_PROMETHEUS}",
             "decimals": 10,
             "description": "",
+            "fieldConfig": {
+                "defaults": {
+                    "custom": {}
+                },
+                "overrides": []
+            },
             "format": "none",
             "gauge": {
                 "maxValue": 100,
@@ -443,6 +455,12 @@
             "datasource": "${DS_PROMETHEUS}",
             "decimals": null,
             "description": "All tokens that belong to the staker, including locked, unlocked and rewards.",
+            "fieldConfig": {
+                "defaults": {
+                    "custom": {}
+                },
+                "overrides": []
+            },
             "format": "none",
             "gauge": {
                 "maxValue": 100,
@@ -530,6 +548,12 @@
             ],
             "datasource": "${DS_PROMETHEUS}",
             "decimals": null,
+            "fieldConfig": {
+                "defaults": {
+                    "custom": {}
+                },
+                "overrides": []
+            },
             "format": "none",
             "gauge": {
                 "maxValue": 100,
@@ -617,6 +641,12 @@
             "datasource": "${DS_PROMETHEUS}",
             "decimals": 0,
             "description": "",
+            "fieldConfig": {
+                "defaults": {
+                    "custom": {}
+                },
+                "overrides": []
+            },
             "format": "none",
             "gauge": {
                 "maxValue": 100,
@@ -716,6 +746,12 @@
             ],
             "datasource": "${DS_PROMETHEUS}",
             "description": "",
+            "fieldConfig": {
+                "defaults": {
+                    "custom": {}
+                },
+                "overrides": []
+            },
             "format": "none",
             "gauge": {
                 "maxValue": 100,
@@ -952,9 +988,10 @@
             "linewidth": 1,
             "nullPointMode": "null",
             "options": {
-                "dataLinks": []
+                "alertThreshold": true
             },
             "percentage": false,
+            "pluginVersion": "7.2.2",
             "pointradius": 2,
             "points": false,
             "renderer": "flot",
@@ -1034,6 +1071,12 @@
             ],
             "datasource": "${DS_PROMETHEUS}",
             "decimals": 0,
+            "fieldConfig": {
+                "defaults": {
+                    "custom": {}
+                },
+                "overrides": []
+            },
             "format": "none",
             "gauge": {
                 "maxValue": 100,
@@ -1126,6 +1169,12 @@
             "datasource": "${DS_PROMETHEUS}",
             "decimals": 10,
             "description": "",
+            "fieldConfig": {
+                "defaults": {
+                    "custom": {}
+                },
+                "overrides": []
+            },
             "format": "none",
             "gauge": {
                 "maxValue": 100,
@@ -1213,6 +1262,12 @@
             ],
             "datasource": "${DS_PROMETHEUS}",
             "decimals": null,
+            "fieldConfig": {
+                "defaults": {
+                    "custom": {}
+                },
+                "overrides": []
+            },
             "format": "none",
             "gauge": {
                 "maxValue": 100,
@@ -1301,6 +1356,12 @@
             "datasource": "${DS_PROMETHEUS}",
             "decimals": null,
             "description": "",
+            "fieldConfig": {
+                "defaults": {
+                    "custom": {}
+                },
+                "overrides": []
+            },
             "format": "none",
             "gauge": {
                 "maxValue": 100,
@@ -1389,6 +1450,12 @@
             "datasource": "${DS_PROMETHEUS}",
             "decimals": null,
             "description": "",
+            "fieldConfig": {
+                "defaults": {
+                    "custom": {}
+                },
+                "overrides": []
+            },
             "format": "none",
             "gauge": {
                 "maxValue": 100,
@@ -1477,6 +1544,12 @@
             "datasource": "${DS_PROMETHEUS}",
             "decimals": null,
             "description": "",
+            "fieldConfig": {
+                "defaults": {
+                    "custom": {}
+                },
+                "overrides": []
+            },
             "format": "none",
             "gauge": {
                 "maxValue": 100,
@@ -1620,9 +1693,10 @@
             "linewidth": 1,
             "nullPointMode": "null",
             "options": {
-                "dataLinks": []
+                "alertThreshold": true
             },
             "percentage": false,
+            "pluginVersion": "7.2.2",
             "pointradius": 2,
             "points": false,
             "renderer": "flot",
@@ -1730,9 +1804,10 @@
             "linewidth": 1,
             "nullPointMode": "null",
             "options": {
-                "dataLinks": []
+                "alertThreshold": true
             },
             "percentage": false,
+            "pluginVersion": "7.2.2",
             "pointradius": 2,
             "points": false,
             "renderer": "flot",
@@ -1819,9 +1894,10 @@
             "linewidth": 1,
             "nullPointMode": "null",
             "options": {
-                "dataLinks": []
+                "alertThreshold": true
             },
             "percentage": false,
+            "pluginVersion": "7.2.2",
             "pointradius": 2,
             "points": false,
             "renderer": "flot",
@@ -1944,9 +2020,10 @@
             "linewidth": 1,
             "nullPointMode": "null",
             "options": {
-                "dataLinks": []
+                "alertThreshold": true
             },
             "percentage": false,
+            "pluginVersion": "7.2.2",
             "pointradius": 2,
             "points": false,
             "renderer": "flot",
@@ -2079,9 +2156,10 @@
             "linewidth": 1,
             "nullPointMode": "null",
             "options": {
-                "dataLinks": []
+                "alertThreshold": true
             },
             "percentage": false,
+            "pluginVersion": "7.2.2",
             "pointradius": 2,
             "points": false,
             "renderer": "flot",
@@ -2114,16 +2192,14 @@
                     "fill": true,
                     "line": true,
                     "op": "gt",
-                    "value": 0,
-                    "yaxis": "left"
+                    "value": 0
                 },
                 {
                     "colorMode": "critical",
                     "fill": true,
                     "line": true,
                     "op": "lt",
-                    "value": 100,
-                    "yaxis": "left"
+                    "value": 100
                 }
             ],
             "timeFrom": null,
@@ -2257,9 +2333,10 @@
             "linewidth": 1,
             "nullPointMode": "null",
             "options": {
-                "dataLinks": []
+                "alertThreshold": true
             },
             "percentage": false,
+            "pluginVersion": "7.2.2",
             "pointradius": 2,
             "points": false,
             "renderer": "flot",
@@ -2398,9 +2475,10 @@
             "linewidth": 1,
             "nullPointMode": "null",
             "options": {
-                "dataLinks": []
+                "alertThreshold": true
             },
             "percentage": false,
+            "pluginVersion": "7.2.2",
             "pointradius": 2,
             "points": false,
             "renderer": "flot",
@@ -2509,6 +2587,13 @@
             "dashes": false,
             "datasource": "${DS_PROMETHEUS}",
             "decimals": null,
+            "fieldConfig": {
+                "defaults": {
+                    "custom": {},
+                    "links": []
+                },
+                "overrides": []
+            },
             "fill": 1,
             "fillGradient": 0,
             "gridPos": {
@@ -2534,9 +2619,10 @@
             "linewidth": 1,
             "nullPointMode": "null",
             "options": {
-                "dataLinks": []
+                "alertThreshold": true
             },
             "percentage": false,
+            "pluginVersion": "7.2.2",
             "pointradius": 2,
             "points": false,
             "renderer": "flot",
@@ -2558,8 +2644,7 @@
                     "fill": true,
                     "line": true,
                     "op": "lt",
-                    "value": 1,
-                    "yaxis": "left"
+                    "value": 1
                 }
             ],
             "timeFrom": null,
@@ -4585,13 +4670,20 @@
                     "datasource": "${DS_PROMETHEUS}",
                     "decimals": 2,
                     "description": "Basic CPU info",
+                    "fieldConfig": {
+                        "defaults": {
+                            "custom": {},
+                            "links": []
+                        },
+                        "overrides": []
+                    },
                     "fill": 4,
                     "fillGradient": 0,
                     "gridPos": {
                         "h": 7,
                         "w": 12,
                         "x": 0,
-                        "y": 5
+                        "y": 35
                     },
                     "hiddenSeries": false,
                     "id": 77,
@@ -4616,9 +4708,10 @@
                     "maxPerRow": 6,
                     "nullPointMode": "null",
                     "options": {
-                        "dataLinks": []
+                        "alertThreshold": true
                     },
                     "percentage": true,
+                    "pluginVersion": "7.2.2",
                     "pointradius": 5,
                     "points": false,
                     "renderer": "flot",
@@ -4817,13 +4910,20 @@
                     "datasource": "${DS_PROMETHEUS}",
                     "decimals": 2,
                     "description": "Basic memory usage",
+                    "fieldConfig": {
+                        "defaults": {
+                            "custom": {},
+                            "links": []
+                        },
+                        "overrides": []
+                    },
                     "fill": 4,
                     "fillGradient": 0,
                     "gridPos": {
                         "h": 7,
                         "w": 12,
                         "x": 12,
-                        "y": 5
+                        "y": 35
                     },
                     "hiddenSeries": false,
                     "id": 78,
@@ -4845,9 +4945,10 @@
                     "maxPerRow": 6,
                     "nullPointMode": "null",
                     "options": {
-                        "dataLinks": []
+                        "alertThreshold": true
                     },
                     "percentage": false,
+                    "pluginVersion": "7.2.2",
                     "pointradius": 5,
                     "points": false,
                     "renderer": "flot",
@@ -5001,13 +5102,20 @@
                     "dashes": false,
                     "datasource": "${DS_PROMETHEUS}",
                     "description": "Basic network info per interface",
+                    "fieldConfig": {
+                        "defaults": {
+                            "custom": {},
+                            "links": []
+                        },
+                        "overrides": []
+                    },
                     "fill": 4,
                     "fillGradient": 0,
                     "gridPos": {
                         "h": 7,
                         "w": 12,
                         "x": 0,
-                        "y": 12
+                        "y": 42
                     },
                     "hiddenSeries": false,
                     "id": 74,
@@ -5031,9 +5139,10 @@
                     "links": [],
                     "nullPointMode": "null",
                     "options": {
-                        "dataLinks": []
+                        "alertThreshold": true
                     },
                     "percentage": false,
+                    "pluginVersion": "7.2.2",
                     "pointradius": 5,
                     "points": false,
                     "renderer": "flot",
@@ -5150,13 +5259,20 @@
                     "datasource": "${DS_PROMETHEUS}",
                     "decimals": 3,
                     "description": "Disk space used of all filesystems mounted",
+                    "fieldConfig": {
+                        "defaults": {
+                            "custom": {},
+                            "links": []
+                        },
+                        "overrides": []
+                    },
                     "fill": 4,
                     "fillGradient": 0,
                     "gridPos": {
                         "h": 7,
                         "w": 12,
                         "x": 12,
-                        "y": 12
+                        "y": 42
                     },
                     "height": "",
                     "hiddenSeries": false,
@@ -5180,9 +5296,10 @@
                     "maxPerRow": 6,
                     "nullPointMode": "null",
                     "options": {
-                        "dataLinks": []
+                        "alertThreshold": true
                     },
                     "percentage": false,
+                    "pluginVersion": "7.2.2",
                     "pointradius": 5,
                     "points": false,
                     "renderer": "flot",
@@ -5257,7 +5374,7 @@
         }
     ],
     "refresh": "10s",
-    "schemaVersion": 22,
+    "schemaVersion": 26,
     "style": "dark",
     "tags": [],
     "templating": {
@@ -5270,7 +5387,6 @@
                 "definition": "label_values(ursula_host_info_info, domains)",
                 "hide": 2,
                 "includeAll": false,
-                "index": -1,
                 "label": "Network",
                 "multi": false,
                 "name": "network",
@@ -5294,7 +5410,6 @@
                 "definition": "label_values(ursula_host_info_info, app_version)",
                 "hide": 2,
                 "includeAll": false,
-                "index": -1,
                 "label": "App version",
                 "multi": false,
                 "name": "app_version",
